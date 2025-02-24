@@ -22,6 +22,25 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+   </property>
    <property name="text">
     <string>Se connecter</string>
    </property>
@@ -35,6 +54,20 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 5px;
+    color: #2c3e50;
+    font: 12px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498db;
+}</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="le_mdp">
    <property name="geometry">
@@ -44,6 +77,20 @@
      <width>113</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 5px;
+    color: #2c3e50;
+    font: 12px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498db;
+}</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
