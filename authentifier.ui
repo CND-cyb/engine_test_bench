@@ -6,18 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>456</width>
     <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #dfe6e9;
+    color: #2d3436;
+}</string>
+  </property>
   <widget class="QPushButton" name="pb_connecter">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>200</y>
+     <x>160</x>
+     <y>240</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -45,13 +51,13 @@ QPushButton:pressed {
     <string>Se connecter</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="le_identifier">
+  <widget class="QLineEdit" name="le_identifiant">
    <property name="geometry">
     <rect>
      <x>170</x>
      <y>80</y>
-     <width>113</width>
-     <height>22</height>
+     <width>181</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -74,8 +80,8 @@ QLineEdit:focus {
     <rect>
      <x>170</x>
      <y>130</y>
-     <width>113</width>
-     <height>22</height>
+     <width>181</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -99,7 +105,7 @@ QLineEdit:focus {
      <x>90</x>
      <y>130</y>
      <width>71</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -112,11 +118,24 @@ QLineEdit:focus {
      <x>100</x>
      <y>80</y>
      <width>61</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string>Identifiant</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="l_erreur">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>170</y>
+     <width>241</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

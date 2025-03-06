@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>998</width>
+    <height>182</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+  </property>
+  <widget class="QPushButton" name="pb_marche">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>340</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+   </property>
+   <property name="text">
+    <string>Marche </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_arret">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>340</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+   </property>
+   <property name="text">
+    <string>Arrêt </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_valider">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>280</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+   </property>
+   <property name="text">
+    <string>Valider</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sB_valeurFrein">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>210</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QSlider" name="slider_valeurFrein">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>180</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSlider {
+    background: transparent;
+}
+
+QSlider::groove:horizontal {
+    height: 8px;
+    background: #E0E0E0;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #4A90E2;
+    border: 2px solid #357ABD;
+    width: 16px;
+    height: 16px;
+    margin: -4px 0;
+    border-radius: 8px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #4CAF50;
+    border-radius: 4px;
+}
+
+QSlider::add-page:horizontal {
+    background: #E0E0E0;
+    border-radius: 4px;
+}
+</string>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>80</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Choisir la consigne de frein </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_quitter">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>440</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

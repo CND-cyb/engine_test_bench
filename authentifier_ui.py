@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'authentifier.ui'
+# Form implementation generated from reading ui file 'c:\pyqt6\banc_moteur-main\authentifier.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -13,14 +13,59 @@ class Ui_Connexion(object):
     def setupUi(self, Connexion):
         Connexion.setObjectName("Connexion")
         Connexion.resize(400, 300)
+        Connexion.setStyleSheet("QWidget {\n"
+"    background-color: #dfe6e9;\n"
+"    color: #2d3436;\n"
+"}")
         self.pb_connecter = QtWidgets.QPushButton(parent=Connexion)
         self.pb_connecter.setGeometry(QtCore.QRect(140, 200, 121, 31))
+        self.pb_connecter.setStyleSheet("QPushButton {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    border-radius: 5px;\n"
+"    color: #2d3436;\n"
+"    padding: 6px 12px;\n"
+"    font: 13px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b2bec3;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #636e72;\n"
+"    color: #ffffff;\n"
+"}")
         self.pb_connecter.setObjectName("pb_connecter")
         self.le_identifier = QtWidgets.QLineEdit(parent=Connexion)
         self.le_identifier.setGeometry(QtCore.QRect(170, 80, 113, 22))
+        self.le_identifier.setStyleSheet("QLineEdit {\n"
+"    background-color: #ecf0f1;\n"
+"    border: 1px solid #bdc3c7;\n"
+"    border-radius: 4px;\n"
+"    padding: 5px;\n"
+"    color: #2c3e50;\n"
+"    font: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #3498db;\n"
+"}")
         self.le_identifier.setObjectName("le_identifier")
         self.le_mdp = QtWidgets.QLineEdit(parent=Connexion)
         self.le_mdp.setGeometry(QtCore.QRect(170, 130, 113, 22))
+        self.le_mdp.setStyleSheet("QLineEdit {\n"
+"    background-color: #ecf0f1;\n"
+"    border: 1px solid #bdc3c7;\n"
+"    border-radius: 4px;\n"
+"    padding: 5px;\n"
+"    color: #2c3e50;\n"
+"    font: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #3498db;\n"
+"}")
         self.le_mdp.setObjectName("le_mdp")
         self.label = QtWidgets.QLabel(parent=Connexion)
         self.label.setGeometry(QtCore.QRect(90, 130, 71, 20))
