@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>488</width>
-    <height>354</height>
+    <width>371</width>
+    <height>295</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -57,7 +57,7 @@ QLineEdit:focus {
 }</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pb_envoyer">
+  <widget class="QPushButton" name="pb_envoyer_code2AF">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -89,7 +89,7 @@ QPushButton:pressed {
     <string>Envoyer</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pb_2AF_retourAccueil">
    <property name="geometry">
     <rect>
      <x>150</x>

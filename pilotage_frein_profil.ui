@@ -81,7 +81,7 @@ QComboBox QAbstractItemView {
     </property>
    </item>
   </widget>
-  <widget class="QPushButton" name="pb_choisir">
+  <widget class="QPushButton" name="pb_choisir_frein_profil">
    <property name="geometry">
     <rect>
      <x>420</x>
@@ -136,7 +136,7 @@ QPushButton:pressed {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>4</number>
    </property>
    <widget class="QWidget" name="profil1">
     <attribute name="title">
@@ -863,11 +863,11 @@ QPushButton:pressed {
       <string>Retour</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pb_valider_profil4_2">
+    <widget class="QPushButton" name="pb_valider_profil3">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>230</y>
+       <x>60</x>
+       <y>170</y>
        <width>91</width>
        <height>31</height>
       </rect>
@@ -898,8 +898,8 @@ QPushButton:pressed {
     <widget class="QLabel" name="label_19">
      <property name="geometry">
       <rect>
-       <x>56</x>
-       <y>126</y>
+       <x>20</x>
+       <y>110</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -912,8 +912,8 @@ de la courbe</string>
     <widget class="QLabel" name="label_18">
      <property name="geometry">
       <rect>
-       <x>56</x>
-       <y>77</y>
+       <x>20</x>
+       <y>50</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -926,8 +926,8 @@ de la courbe</string>
     <widget class="QSpinBox" name="sB_ordonneeOrigine_profil3">
      <property name="geometry">
       <rect>
-       <x>166</x>
-       <y>127</y>
+       <x>140</x>
+       <y>110</y>
        <width>61</width>
        <height>31</height>
       </rect>
@@ -942,8 +942,8 @@ de la courbe</string>
     <widget class="QSpinBox" name="sB_coefficientDirecteur_profil3">
      <property name="geometry">
       <rect>
-       <x>166</x>
-       <y>77</y>
+       <x>140</x>
+       <y>50</y>
        <width>61</width>
        <height>31</height>
       </rect>
@@ -1080,7 +1080,7 @@ QPushButton:pressed {
       <string>Valider</string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_vitesse_4">
+    <widget class="QLabel" name="l_profil4_vitesse">
      <property name="geometry">
       <rect>
        <x>335</x>
@@ -1093,7 +1093,7 @@ QPushButton:pressed {
       <string>Vitesse :</string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_couple_4">
+    <widget class="QLabel" name="l_profil4_couple">
      <property name="geometry">
       <rect>
        <x>333</x>
@@ -1106,7 +1106,7 @@ QPushButton:pressed {
       <string>Couple :</string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_courant_4">
+    <widget class="QLabel" name="l_profil4_courant">
      <property name="geometry">
       <rect>
        <x>325</x>
@@ -1119,7 +1119,7 @@ QPushButton:pressed {
       <string>Courant  :</string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_moteur_tension_4">
+    <widget class="QLabel" name="l_profil4_moteur_tension">
      <property name="geometry">
       <rect>
        <x>610</x>
@@ -1132,7 +1132,7 @@ QPushButton:pressed {
       <string>Tension :</string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_moteur_couple_4">
+    <widget class="QLabel" name="l_profil4_moteur_couple">
      <property name="geometry">
       <rect>
        <x>612</x>
@@ -1145,7 +1145,7 @@ QPushButton:pressed {
       <string>Couple :</string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_moteur_pUtile_4">
+    <widget class="QLabel" name="l_profil4_moteur_pUtile">
      <property name="geometry">
       <rect>
        <x>618</x>
@@ -1171,7 +1171,7 @@ QPushButton:pressed {
       <string>Valeurs</string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_pUtile_4">
+    <widget class="QLabel" name="l_profil4_pUtile">
      <property name="geometry">
       <rect>
        <x>340</x>
@@ -1197,7 +1197,7 @@ QPushButton:pressed {
       <string>Caractéristiques du moteur </string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_tension_4">
+    <widget class="QLabel" name="l_profil4_tension">
      <property name="geometry">
       <rect>
        <x>330</x>
@@ -1210,7 +1210,7 @@ QPushButton:pressed {
       <string>Tension :</string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_typeMoteur_4">
+    <widget class="QLabel" name="l_profil4_typeMoteur">
      <property name="geometry">
       <rect>
        <x>610</x>
@@ -1223,7 +1223,7 @@ QPushButton:pressed {
       <string>Type de Moteur : </string>
      </property>
     </widget>
-    <widget class="QLabel" name="l_profil1_moteur_courant_4">
+    <widget class="QLabel" name="l_profil4_moteur_courant">
      <property name="geometry">
       <rect>
        <x>605</x>
@@ -1663,7 +1663,7 @@ QPushButton:pressed {
     </widget>
    </widget>
   </widget>
-  <widget class="QPushButton" name="pb_quitter">
+  <widget class="QPushButton" name="pb_frein_profil_quitter">
    <property name="geometry">
     <rect>
      <x>400</x>

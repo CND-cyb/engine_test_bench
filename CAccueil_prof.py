@@ -5,17 +5,15 @@ import mysql.connector
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication, QWidget
-from accueil import Ui_Form  
+from accueil_prof import Ui_AppBancMot_prof  
 from app_choix_moteur import AppChoixMoteur
 
-class AppBancMot(QWidget):
+class AppBancMotProf(QWidget):
     def __init__(self, identifiant):
         super().__init__()
-        self.ui = Ui_Form()
+        self.ui = Ui_AppBancMot_prof()
         self.ui.setupUi(self)  # Configure l'interface
-        self.ui.pb_choisir_moteur.clicked.connect(self.choisirMoteur())
         self.showFullScreen()
-        
         self.identifiant = identifiant  # Stocker l'identifiant
         print(f"Utilisateur connecté : {self.identifiant}")  # Affichage en console
 
@@ -31,7 +29,8 @@ class AppBancMot(QWidget):
 
         # Connecter le bouton de validation
         self.ui.pb_valider_2AF.clicked.connect(self.verify_totp)
-
+        self.ui.pb_choisir_moteur.clicked.connect(self.choisirMoteur)
+        self.ui.pb_deconnexion.clicked.connect(self.deconnexion)
         self.show()
 
     def generate_qr_code(self, uri):
@@ -78,18 +77,20 @@ class AppBancMot(QWidget):
             print("Clé secrète enregistrée avec succès.")
         except mysql.connector.Error as e:
             print(f"Erreur MySQL : {e}")
-            
+    
+    def deconnexion(self):
+        self.close()
+
     def choisirMoteur(self):
         print("Bouton cliqué, lancement de AppChoixMoteur")  # Debug
-        self.choixMoteur = AppChoixMoteur()
+        self.choixMoteur = AppChoixMoteur(self.identifiant)
         print("Fenêtre créée, affichage en cours...")  # Debug
         self.choixMoteur.show()
-        self.hide()  # Pour cacher au lieu de fermer
-        print("Fenêtre actuelle cachée")  # Debug
-
+        self.close()  # Pour cacher au lieu de fermer
+        
 if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
     identifiant = "utilisateur_exemple"  # Remplacez ceci par un identifiant valide
-    window = AppBancMot(identifiant)  # Utilisez AppBancMot pour afficher l'interface
+    window = AppBancMotProf(identifiant)  # Utilisez AppBancMot pour afficher l'interface
     sys.exit(app.exec())

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>998</width>
-    <height>182</height>
+    <width>800</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@ QPushButton:pressed {
     color: #ffffff;
 }</string>
   </property>
-  <widget class="QPushButton" name="pb_marche">
+  <widget class="QPushButton" name="pb_marche_frein">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -64,7 +64,7 @@ QPushButton:pressed {
     <string>Marche </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pb_arret">
+  <widget class="QPushButton" name="pb_arret_frein">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -96,7 +96,7 @@ QPushButton:pressed {
     <string>Arrêt </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pb_valider">
+  <widget class="QPushButton" name="pb_valider_consigne_frein">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -201,7 +201,7 @@ QSlider::add-page:horizontal {
     <string>Choisir la consigne de frein </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pb_quitter">
+  <widget class="QPushButton" name="pb_quitter_pilotage_frein">
    <property name="geometry">
     <rect>
      <x>390</x>

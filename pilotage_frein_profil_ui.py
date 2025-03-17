@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'pilotage_frein_profil.ui'
+## Form generated from reading UI file 'pilotage_frein_profilzEwppC.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.5.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -62,10 +62,10 @@ class Ui_Form(object):
 "    selection-background-color: #636e72;\n"
 "    selection-color: #ffffff;\n"
 "}")
-        self.pb_choisir = QPushButton(Form)
-        self.pb_choisir.setObjectName(u"pb_choisir")
-        self.pb_choisir.setGeometry(QRect(420, 100, 81, 31))
-        self.pb_choisir.setStyleSheet(u"QPushButton {\n"
+        self.pb_choisir_frein_profil = QPushButton(Form)
+        self.pb_choisir_frein_profil.setObjectName(u"pb_choisir_frein_profil")
+        self.pb_choisir_frein_profil.setGeometry(QRect(420, 100, 81, 31))
+        self.pb_choisir_frein_profil.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
 "    border-radius: 5px;\n"
@@ -316,7 +316,7 @@ class Ui_Form(object):
 "}")
         self.pb_valider_profil4_2 = QPushButton(self.profil3)
         self.pb_valider_profil4_2.setObjectName(u"pb_valider_profil4_2")
-        self.pb_valider_profil4_2.setGeometry(QRect(80, 230, 91, 31))
+        self.pb_valider_profil4_2.setGeometry(QRect(60, 170, 91, 31))
         self.pb_valider_profil4_2.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -336,18 +336,18 @@ class Ui_Form(object):
 "}")
         self.label_19 = QLabel(self.profil3)
         self.label_19.setObjectName(u"label_19")
-        self.label_19.setGeometry(QRect(56, 126, 111, 31))
+        self.label_19.setGeometry(QRect(20, 110, 111, 31))
         self.label_18 = QLabel(self.profil3)
         self.label_18.setObjectName(u"label_18")
-        self.label_18.setGeometry(QRect(56, 77, 111, 31))
+        self.label_18.setGeometry(QRect(20, 50, 111, 31))
         self.sB_ordonneeOrigine_profil3 = QSpinBox(self.profil3)
         self.sB_ordonneeOrigine_profil3.setObjectName(u"sB_ordonneeOrigine_profil3")
-        self.sB_ordonneeOrigine_profil3.setGeometry(QRect(166, 127, 61, 31))
+        self.sB_ordonneeOrigine_profil3.setGeometry(QRect(140, 110, 61, 31))
         self.sB_ordonneeOrigine_profil3.setMaximum(10000)
         self.sB_ordonneeOrigine_profil3.setSingleStep(10)
         self.sB_coefficientDirecteur_profil3 = QSpinBox(self.profil3)
         self.sB_coefficientDirecteur_profil3.setObjectName(u"sB_coefficientDirecteur_profil3")
-        self.sB_coefficientDirecteur_profil3.setGeometry(QRect(166, 77, 61, 31))
+        self.sB_coefficientDirecteur_profil3.setGeometry(QRect(140, 50, 61, 31))
         self.sB_coefficientDirecteur_profil3.setMaximum(10000)
         self.sB_coefficientDirecteur_profil3.setSingleStep(10)
         self.tabWidget.addTab(self.profil3, "")
@@ -577,10 +577,10 @@ class Ui_Form(object):
 "    color: #ffffff;\n"
 "}")
         self.tabWidget.addTab(self.profil5, "")
-        self.pb_quitter = QPushButton(Form)
-        self.pb_quitter.setObjectName(u"pb_quitter")
-        self.pb_quitter.setGeometry(QRect(400, 521, 101, 31))
-        self.pb_quitter.setStyleSheet(u"QPushButton {\n"
+        self.pb_frein_profil_quitter = QPushButton(Form)
+        self.pb_frein_profil_quitter.setObjectName(u"pb_frein_profil_quitter")
+        self.pb_frein_profil_quitter.setGeometry(QRect(400, 521, 101, 31))
+        self.pb_frein_profil_quitter.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
 "    border-radius: 5px;\n"
@@ -614,7 +614,7 @@ class Ui_Form(object):
         self.cB_choix_profil.setItemText(3, QCoreApplication.translate("Form", u"Couple de type : T = An\u22121", None))
         self.cB_choix_profil.setItemText(4, QCoreApplication.translate("Form", u"Couple de commande impulsionnelle", None))
 
-        self.pb_choisir.setText(QCoreApplication.translate("Form", u"Choisir", None))
+        self.pb_choisir_frein_profil.setText(QCoreApplication.translate("Form", u"Choisir", None))
         self.label.setText(QCoreApplication.translate("Form", u"Choisissez le profil voulu", None))
         self.label_5.setText(QCoreApplication.translate("Form", u"Couple Initial : ", None))
         self.pb_valider_profil1.setText(QCoreApplication.translate("Form", u"Valider", None))
@@ -713,6 +713,6 @@ class Ui_Form(object):
         self.pb_retour_profil5.setText(QCoreApplication.translate("Form", u"Retour", None))
         self.pb_valider_profil5.setText(QCoreApplication.translate("Form", u"Valider", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.profil5), QCoreApplication.translate("Form", u"Profil 5", None))
-        self.pb_quitter.setText(QCoreApplication.translate("Form", u"Quitter", None))
+        self.pb_frein_profil_quitter.setText(QCoreApplication.translate("Form", u"Quitter", None))
     # retranslateUi
 

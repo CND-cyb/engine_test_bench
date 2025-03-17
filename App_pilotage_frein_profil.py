@@ -10,13 +10,13 @@ class AppPilotage(QWidget):
         self.ui.tabWidget.setEnabled(True)  
         for i in range(self.ui.tabWidget.count()):
             self.ui.tabWidget.setTabEnabled(i, False)
-        self.ui.pb_choisir.clicked.connect(self.choisirProfil)
+        self.ui.pb_choisir_frein_profil.clicked.connect(self.choisirProfil)
         self.ui.pb_retour_profil1.clicked.connect(self.retourChoixProfil)
         self.ui.pb_retour_profil2.clicked.connect(self.retourChoixProfil)
         self.ui.pb_retour_profil3.clicked.connect(self.retourChoixProfil)
         self.ui.pb_retour_profil4.clicked.connect(self.retourChoixProfil)        
         self.ui.pb_retour_profil5.clicked.connect(self.retourChoixProfil)
-        self.ui.pb_quitter.clicked.connect(self.quitter)
+        self.ui.pb_frein_profil_quitter.clicked.connect(self.quitter)
         self.ui.tabWidget.setCurrentIndex(0)
         self.show()
 
