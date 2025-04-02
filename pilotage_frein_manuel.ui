@@ -201,7 +201,7 @@ QSlider::add-page:horizontal {
     <string>Choisir la consigne de frein </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pb_quitter_pilotage_frein">
+  <widget class="QPushButton" name="pb_retour_pilotage_frein">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -211,7 +211,7 @@ QSlider::add-page:horizontal {
     </rect>
    </property>
    <property name="text">
-    <string>Quitter</string>
+    <string>Retour</string>
    </property>
   </widget>
  </widget>

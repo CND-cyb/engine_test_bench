@@ -1,9 +1,11 @@
 import sys
 import mysql.connector
 import bcrypt
-from PySide6.QtWidgets import QApplication, QWidget
+from PySide6.QtWidgets import QApplication, QWidget, QLineEdit
 from authentifier import Ui_Connexion
+from C2AF import Double_Auth
 from CAccueil import AppBancMot  
+from CAccueil_prof import AppBancMotProf
 
 class Connexion(QWidget):
     def __init__(self):
@@ -11,6 +13,7 @@ class Connexion(QWidget):
         self.ui = Ui_Connexion()
         self.ui.setupUi(self)
         self.ui.pb_connecter.clicked.connect(self.authentifier)
+        self.ui.le_mdp.setEchoMode(QLineEdit.Password)
 
     def authentifier(self):
         identifiant = self.ui.le_identifiant.text().strip()
@@ -20,9 +23,9 @@ class Connexion(QWidget):
             self.afficher_message("Veuillez remplir tous les champs.")
             return
 
-        host = 'mysql-eguidat.alwaysdata.net'
-        user = 'eguidat_banc_mot'
-        db_password = 'CestGénialCeBts2025*!'
+        host = 'localhost'
+        user = 'root'
+        db_password = ''
         database = 'eguidat_banc_moteur'
 
         try:
@@ -40,18 +43,26 @@ class Connexion(QWidget):
                 self.afficher_message("Identifiant ou mot de passe incorrect.")
             else:
                 hashed_password = result["mdp"]
-
                 if bcrypt.checkpw(mdp.encode(), hashed_password.encode()):
                     cursor.execute("SELECT secret FROM utilisateur WHERE identifiant = %s", (identifiant,))
                     result=cursor.fetchone()
-                    if result is None:
-                        self.accueil = AppBancMot(identifiant)
-                        self.accueil.show()
+                    if result and result["secret"]:
+                        self.Double_Authentification=Double_Auth(identifiant)
+                        self.Double_Authentification.show()
                         self.close()
                     else:
-                        self.accueil = AppBancMot(identifiant)
-                        self.accueil.show()
-                        self.close()
+                        cursor.execute("SELECT role FROM utilisateur WHERE identifiant = %s",(identifiant,))
+                        result=cursor.fetchall()
+                        print(result)
+                        if result and result[0]['role'] == "prof":
+                            self.role=result[0]
+                            self.accueil = AppBancMotProf(identifiant)
+                            self.accueil.show()
+                            self.close()
+                        else:
+                            self.accueil = AppBancMot(identifiant)
+                            self.accueil.show()
+                            self.close()
                 else:
                     self.afficher_message("Identifiant ou mot de passe incorrect.")
             cursor.close()

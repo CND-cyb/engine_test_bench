@@ -13,12 +13,10 @@ class AppBancMot(QWidget):
         super().__init__()
         self.ui = Ui_Form()
         self.ui.setupUi(self)  # Configure l'interface
-        self.ui.pb_choisir_moteur.clicked.connect(self.choisirMoteur())
         self.showFullScreen()
-        
         self.identifiant = identifiant  # Stocker l'identifiant
         print(f"Utilisateur connecté : {self.identifiant}")  # Affichage en console
-
+        self.ui.pb_choisir_moteur.clicked.connect(self.choisirMoteur)
         # Générer une clé secrète TOTP
         self.secret = pyotp.random_base32()
         self.otp_uri = pyotp.totp.TOTP(self.secret).provisioning_uri(
@@ -55,11 +53,10 @@ class AppBancMot(QWidget):
             self.ui.l_reponse.setText("Code TOTP invalide")
 
     def save_secret_to_db(self):
-        host = 'mysql-eguidat.alwaysdata.net'
-        user = 'eguidat_banc_mot'
-        db_password = 'CestGénialCeBts2025*!'
+        host = 'localhost'
+        user = 'root'
+        db_password = ''
         database = 'eguidat_banc_moteur'
-
         try:
             connection = mysql.connector.connect(
                 host=host,
@@ -81,7 +78,7 @@ class AppBancMot(QWidget):
             
     def choisirMoteur(self):
         print("Bouton cliqué, lancement de AppChoixMoteur")  # Debug
-        self.choixMoteur = AppChoixMoteur()
+        self.choixMoteur = AppChoixMoteur(self.identifiant)
         print("Fenêtre créée, affichage en cours...")  # Debug
         self.choixMoteur.show()
         self.hide()  # Pour cacher au lieu de fermer

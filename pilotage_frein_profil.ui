@@ -136,7 +136,7 @@ QPushButton:pressed {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>4</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="profil1">
     <attribute name="title">
@@ -195,6 +195,9 @@ QPushButton:pressed {
        <width>61</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <number>-10000</number>
      </property>
      <property name="maximum">
       <number>10000</number>
@@ -588,6 +591,9 @@ de la courbe </string>
        <height>31</height>
       </rect>
      </property>
+     <property name="minimum">
+      <number>-10000</number>
+     </property>
      <property name="maximum">
       <number>10000</number>
      </property>
@@ -617,6 +623,9 @@ de la courbe </string>
        <width>61</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <number>-10000</number>
      </property>
      <property name="maximum">
       <number>10000</number>
@@ -932,6 +941,9 @@ de la courbe</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="minimum">
+      <number>-10000</number>
+     </property>
      <property name="maximum">
       <number>10000</number>
      </property>
@@ -947,6 +959,9 @@ de la courbe</string>
        <width>61</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <number>-10000</number>
      </property>
      <property name="maximum">
       <number>10000</number>
@@ -969,6 +984,9 @@ de la courbe</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="minimum">
+      <number>-10000</number>
+     </property>
      <property name="maximum">
       <number>10000</number>
      </property>
@@ -985,6 +1003,9 @@ de la courbe</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="minimum">
+      <number>-10000</number>
+     </property>
      <property name="maximum">
       <number>10000</number>
      </property>
@@ -1000,6 +1021,9 @@ de la courbe</string>
        <width>61</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <number>-10000</number>
      </property>
      <property name="maximum">
       <number>10000</number>
@@ -1451,6 +1475,9 @@ QPushButton:pressed {
        <height>31</height>
       </rect>
      </property>
+     <property name="minimum">
+      <number>-10000</number>
+     </property>
      <property name="maximum">
       <number>10000</number>
      </property>
@@ -1479,6 +1506,9 @@ QPushButton:pressed {
        <width>61</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <number>-10000</number>
      </property>
      <property name="maximum">
       <number>10000</number>
@@ -1509,6 +1539,9 @@ QPushButton:pressed {
        <height>31</height>
       </rect>
      </property>
+     <property name="minimum">
+      <number>-10000</number>
+     </property>
      <property name="maximum">
       <number>10000</number>
      </property>
@@ -1537,6 +1570,9 @@ QPushButton:pressed {
        <width>61</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="minimum">
+      <number>-10000</number>
      </property>
      <property name="maximum">
       <number>10000</number>

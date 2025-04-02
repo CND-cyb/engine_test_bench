@@ -15,18 +15,18 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QLabel,
-    QLineEdit, QPushButton, QSizePolicy, QTabWidget,
-    QTextEdit, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QHeaderView,
+    QLabel, QLineEdit, QPushButton, QSizePolicy,
+    QTabWidget, QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_AppBancMot_prof(object):
     def setupUi(self, AppBancMot_prof):
         if not AppBancMot_prof.objectName():
             AppBancMot_prof.setObjectName(u"AppBancMot_prof")
-        AppBancMot_prof.resize(1128, 609)
+        AppBancMot_prof.resize(1366, 868)
         self.tab_administration = QTabWidget(AppBancMot_prof)
         self.tab_administration.setObjectName(u"tab_administration")
-        self.tab_administration.setGeometry(QRect(0, 0, 1141, 671))
+        self.tab_administration.setGeometry(QRect(0, 0, 1371, 841))
         self.tab_administration.setStyleSheet(u"QTabWidget {\n"
 "    background-color: #f9f9f9;  /* Couleur de fond du QTabWidget (gris clair) */\n"
 "    border: 1px solid #d1d1d1;  /* Bordure du QTabWidget */\n"
@@ -69,7 +69,7 @@ class Ui_AppBancMot_prof(object):
         self.tab_3.setObjectName(u"tab_3")
         self.gBox_action_banc_moteur = QGroupBox(self.tab_3)
         self.gBox_action_banc_moteur.setObjectName(u"gBox_action_banc_moteur")
-        self.gBox_action_banc_moteur.setGeometry(QRect(20, 110, 311, 381))
+        self.gBox_action_banc_moteur.setGeometry(QRect(20, 110, 311, 571))
         self.gBox_action_banc_moteur.setStyleSheet(u"QGroupBox {\n"
 "    background-color: #f5f5f5;\n"
 "    border: 1px solid #bdc3c7;\n"
@@ -188,7 +188,7 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.groupBox_3 = QGroupBox(self.tab_3)
         self.groupBox_3.setObjectName(u"groupBox_3")
-        self.groupBox_3.setGeometry(QRect(340, 110, 431, 381))
+        self.groupBox_3.setGeometry(QRect(340, 110, 561, 571))
         self.groupBox_3.setStyleSheet(u"QGroupBox {\n"
 "    background-color: #f5f5f5;\n"
 "    border: 1px solid #bdc3c7;\n"
@@ -205,9 +205,100 @@ class Ui_AppBancMot_prof(object):
 "    font: bold 12px;\n"
 "    background: transparent;\n"
 "}")
+        self.l_info = QLabel(self.groupBox_3)
+        self.l_info.setObjectName(u"l_info")
+        self.l_info.setGeometry(QRect(70, 30, 351, 21))
+        self.l_tension = QLabel(self.groupBox_3)
+        self.l_tension.setObjectName(u"l_tension")
+        self.l_tension.setGeometry(QRect(110, 65, 101, 21))
+        font = QFont()
+        font.setPointSize(8)
+        self.l_tension.setFont(font)
+        self.l_couple = QLabel(self.groupBox_3)
+        self.l_couple.setObjectName(u"l_couple")
+        self.l_couple.setGeometry(QRect(220, 110, 121, 21))
+        self.l_couple.setFont(font)
+        self.l_courant = QLabel(self.groupBox_3)
+        self.l_courant.setObjectName(u"l_courant")
+        self.l_courant.setGeometry(QRect(330, 65, 101, 21))
+        self.l_courant.setFont(font)
+        self.l_vitesse = QLabel(self.groupBox_3)
+        self.l_vitesse.setObjectName(u"l_vitesse")
+        self.l_vitesse.setGeometry(QRect(350, 110, 151, 21))
+        self.l_vitesse.setFont(font)
+        self.l_puissance = QLabel(self.groupBox_3)
+        self.l_puissance.setObjectName(u"l_puissance")
+        self.l_puissance.setGeometry(QRect(80, 110, 111, 21))
+        self.l_puissance.setFont(font)
+        self.w_graphique = QWidget(self.groupBox_3)
+        self.w_graphique.setObjectName(u"w_graphique")
+        self.w_graphique.setGeometry(QRect(10, 200, 531, 351))
+        self.l_axeY = QLabel(self.groupBox_3)
+        self.l_axeY.setObjectName(u"l_axeY")
+        self.l_axeY.setGeometry(QRect(90, 160, 71, 31))
+        self.cBoxAxeY = QComboBox(self.groupBox_3)
+        self.cBoxAxeY.addItem("")
+        self.cBoxAxeY.addItem("")
+        self.cBoxAxeY.addItem("")
+        self.cBoxAxeY.addItem("")
+        self.cBoxAxeY.addItem("")
+        self.cBoxAxeY.addItem("")
+        self.cBoxAxeY.setObjectName(u"cBoxAxeY")
+        self.cBoxAxeY.setGeometry(QRect(170, 160, 121, 31))
+        self.cBoxAxeY.setStyleSheet(u"QComboBox {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    border-radius: 5px;\n"
+"    padding: 6px 30px 6px 6px;\n"
+"    font: 13px;\n"
+"    color: #2d3436;\n"
+"}\n"
+"\n"
+"QComboBox:hover {\n"
+"    background-color: #b2bec3;\n"
+"}\n"
+"\n"
+"QComboBox:pressed {\n"
+"    background-color: #636e72;\n"
+"    color: #ffffff;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 20px;\n"
+"    border-left: 1px solid #b2bec3;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    selection-background-color: #636e72;\n"
+"    selection-color: #ffffff;\n"
+"}")
+        self.pb_valider_axe = QPushButton(self.groupBox_3)
+        self.pb_valider_axe.setObjectName(u"pb_valider_axe")
+        self.pb_valider_axe.setGeometry(QRect(320, 160, 81, 31))
+        self.pb_valider_axe.setStyleSheet(u"QPushButton {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    border-radius: 5px;\n"
+"    color: #2d3436;\n"
+"    padding: 6px 12px;\n"
+"    font: 13px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b2bec3;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #636e72;\n"
+"    color: #ffffff;\n"
+"}")
         self.pb_deconnecter = QPushButton(self.tab_3)
         self.pb_deconnecter.setObjectName(u"pb_deconnecter")
-        self.pb_deconnecter.setGeometry(QRect(500, 530, 111, 31))
+        self.pb_deconnecter.setGeometry(QRect(570, 690, 121, 31))
         self.pb_deconnecter.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -227,7 +318,7 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.pb_demarrer_cycle = QPushButton(self.tab_3)
         self.pb_demarrer_cycle.setObjectName(u"pb_demarrer_cycle")
-        self.pb_demarrer_cycle.setGeometry(QRect(620, 30, 141, 41))
+        self.pb_demarrer_cycle.setGeometry(QRect(760, 30, 141, 41))
         self.pb_demarrer_cycle.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -247,7 +338,7 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.gBox_liste_essai = QGroupBox(self.tab_3)
         self.gBox_liste_essai.setObjectName(u"gBox_liste_essai")
-        self.gBox_liste_essai.setGeometry(QRect(780, 110, 301, 381))
+        self.gBox_liste_essai.setGeometry(QRect(910, 110, 401, 571))
         self.gBox_liste_essai.setStyleSheet(u"QGroupBox {\n"
 "    background-color: #f5f5f5;\n"
 "    border: 1px solid #bdc3c7;\n"
@@ -266,7 +357,7 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.cBox_liste_essai = QComboBox(self.gBox_liste_essai)
         self.cBox_liste_essai.setObjectName(u"cBox_liste_essai")
-        self.cBox_liste_essai.setGeometry(QRect(150, 30, 121, 31))
+        self.cBox_liste_essai.setGeometry(QRect(170, 40, 201, 31))
         self.cBox_liste_essai.setStyleSheet(u"QComboBox {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -300,7 +391,7 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.pb_selectionner_essai = QPushButton(self.gBox_liste_essai)
         self.pb_selectionner_essai.setObjectName(u"pb_selectionner_essai")
-        self.pb_selectionner_essai.setGeometry(QRect(30, 30, 101, 31))
+        self.pb_selectionner_essai.setGeometry(QRect(40, 40, 101, 31))
         self.pb_selectionner_essai.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -318,12 +409,9 @@ class Ui_AppBancMot_prof(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.tE_liste_essai = QTextEdit(self.gBox_liste_essai)
-        self.tE_liste_essai.setObjectName(u"tE_liste_essai")
-        self.tE_liste_essai.setGeometry(QRect(40, 90, 231, 211))
         self.pb_actualiser_liste_essai = QPushButton(self.gBox_liste_essai)
         self.pb_actualiser_liste_essai.setObjectName(u"pb_actualiser_liste_essai")
-        self.pb_actualiser_liste_essai.setGeometry(QRect(90, 310, 91, 31))
+        self.pb_actualiser_liste_essai.setGeometry(QRect(140, 370, 111, 31))
         self.pb_actualiser_liste_essai.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -341,6 +429,84 @@ class Ui_AppBancMot_prof(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
+        self.tE_listeEssai = QTableWidget(self.gBox_liste_essai)
+        if (self.tE_listeEssai.columnCount() < 5):
+            self.tE_listeEssai.setColumnCount(5)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tE_listeEssai.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tE_listeEssai.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tE_listeEssai.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tE_listeEssai.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.tE_listeEssai.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        self.tE_listeEssai.setObjectName(u"tE_listeEssai")
+        self.tE_listeEssai.setGeometry(QRect(10, 90, 381, 192))
+        self.tE_listeEssai.setLayoutDirection(Qt.LeftToRight)
+        self.tE_listeEssai.verticalHeader().setVisible(False)
+        self.pb_trierListeEssai = QPushButton(self.gBox_liste_essai)
+        self.pb_trierListeEssai.setObjectName(u"pb_trierListeEssai")
+        self.pb_trierListeEssai.setGeometry(QRect(60, 290, 101, 31))
+        self.pb_trierListeEssai.setStyleSheet(u"QPushButton {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    border-radius: 5px;\n"
+"    color: #2d3436;\n"
+"    padding: 6px 12px;\n"
+"    font: 13px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b2bec3;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #636e72;\n"
+"    color: #ffffff;\n"
+"}")
+        self.cB_listeTries = QComboBox(self.gBox_liste_essai)
+        self.cB_listeTries.addItem("")
+        self.cB_listeTries.addItem("")
+        self.cB_listeTries.addItem("")
+        self.cB_listeTries.addItem("")
+        self.cB_listeTries.setObjectName(u"cB_listeTries")
+        self.cB_listeTries.setGeometry(QRect(170, 290, 171, 31))
+        self.cB_listeTries.setStyleSheet(u"QComboBox {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    border-radius: 5px;\n"
+"    padding: 6px 30px 6px 6px;\n"
+"    font: 13px;\n"
+"    color: #2d3436;\n"
+"}\n"
+"\n"
+"QComboBox:hover {\n"
+"    background-color: #b2bec3;\n"
+"}\n"
+"\n"
+"QComboBox:pressed {\n"
+"    background-color: #636e72;\n"
+"    color: #ffffff;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 20px;\n"
+"    border-left: 1px solid #b2bec3;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    selection-background-color: #636e72;\n"
+"    selection-color: #ffffff;\n"
+"}")
+        self.l_choix_essai = QLabel(self.gBox_liste_essai)
+        self.l_choix_essai.setObjectName(u"l_choix_essai")
+        self.l_choix_essai.setGeometry(QRect(20, 340, 361, 21))
         self.pb_choisir_moteur = QPushButton(self.tab_3)
         self.pb_choisir_moteur.setObjectName(u"pb_choisir_moteur")
         self.pb_choisir_moteur.setGeometry(QRect(350, 30, 141, 41))
@@ -363,7 +529,7 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.l_moteur = QLabel(self.tab_3)
         self.l_moteur.setObjectName(u"l_moteur")
-        self.l_moteur.setGeometry(QRect(390, 80, 351, 16))
+        self.l_moteur.setGeometry(QRect(470, 80, 351, 16))
         self.tab_administration.addTab(self.tab_3, "")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
@@ -372,11 +538,11 @@ class Ui_AppBancMot_prof(object):
         self.tab_2.setObjectName(u"tab_2")
         self.lE_2AF = QLineEdit(self.tab_2)
         self.lE_2AF.setObjectName(u"lE_2AF")
-        self.lE_2AF.setGeometry(QRect(517, 440, 91, 31))
-        font = QFont()
-        font.setBold(False)
-        font.setItalic(False)
-        self.lE_2AF.setFont(font)
+        self.lE_2AF.setGeometry(QRect(597, 440, 91, 31))
+        font1 = QFont()
+        font1.setBold(False)
+        font1.setItalic(False)
+        self.lE_2AF.setFont(font1)
         self.lE_2AF.setStyleSheet(u"QLineEdit {\n"
 "    background-color: #ecf0f1;\n"
 "    border: 1px solid #bdc3c7;\n"
@@ -391,7 +557,7 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.pb_valider_2AF = QPushButton(self.tab_2)
         self.pb_valider_2AF.setObjectName(u"pb_valider_2AF")
-        self.pb_valider_2AF.setGeometry(QRect(510, 510, 101, 41))
+        self.pb_valider_2AF.setGeometry(QRect(590, 510, 101, 41))
         self.pb_valider_2AF.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -411,35 +577,35 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.l_reponse = QLabel(self.tab_2)
         self.l_reponse.setObjectName(u"l_reponse")
-        self.l_reponse.setGeometry(QRect(620, 440, 391, 31))
+        self.l_reponse.setGeometry(QRect(700, 440, 391, 31))
         self.label = QLabel(self.tab_2)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(490, 60, 171, 41))
+        self.label.setGeometry(QRect(570, 60, 171, 41))
         self.label.setMidLineWidth(1)
         self.qr_label = QLabel(self.tab_2)
         self.qr_label.setObjectName(u"qr_label")
-        self.qr_label.setGeometry(QRect(438, 135, 261, 231))
+        self.qr_label.setGeometry(QRect(518, 135, 261, 231))
         self.tab_administration.addTab(self.tab_2, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
         self.groupBox = QGroupBox(self.tab_4)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setGeometry(QRect(40, 120, 510, 281))
-        self.lineEdit = QLineEdit(self.groupBox)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(100, 40, 113, 22))
-        self.lineEdit_2 = QLineEdit(self.groupBox)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setGeometry(QRect(100, 100, 113, 22))
-        self.lineEdit_3 = QLineEdit(self.groupBox)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-        self.lineEdit_3.setGeometry(QRect(100, 160, 113, 22))
-        self.lineEdit_4 = QLineEdit(self.groupBox)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setGeometry(QRect(330, 40, 113, 22))
-        self.lineEdit_5 = QLineEdit(self.groupBox)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
-        self.lineEdit_5.setGeometry(QRect(330, 100, 113, 22))
+        self.lE_nom_eleve = QLineEdit(self.groupBox)
+        self.lE_nom_eleve.setObjectName(u"lE_nom_eleve")
+        self.lE_nom_eleve.setGeometry(QRect(100, 40, 113, 22))
+        self.lE_prenom_eleve = QLineEdit(self.groupBox)
+        self.lE_prenom_eleve.setObjectName(u"lE_prenom_eleve")
+        self.lE_prenom_eleve.setGeometry(QRect(100, 100, 113, 22))
+        self.lE_classe_eleve = QLineEdit(self.groupBox)
+        self.lE_classe_eleve.setObjectName(u"lE_classe_eleve")
+        self.lE_classe_eleve.setGeometry(QRect(100, 160, 113, 22))
+        self.lE_identifiant_eleve = QLineEdit(self.groupBox)
+        self.lE_identifiant_eleve.setObjectName(u"lE_identifiant_eleve")
+        self.lE_identifiant_eleve.setGeometry(QRect(330, 40, 113, 22))
+        self.lE_mdp_eleve = QLineEdit(self.groupBox)
+        self.lE_mdp_eleve.setObjectName(u"lE_mdp_eleve")
+        self.lE_mdp_eleve.setGeometry(QRect(330, 100, 113, 22))
         self.label_3 = QLabel(self.groupBox)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(60, 40, 41, 21))
@@ -475,6 +641,9 @@ class Ui_AppBancMot_prof(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
+        self.l_resultat_ajout_eleve = QLabel(self.groupBox)
+        self.l_resultat_ajout_eleve.setObjectName(u"l_resultat_ajout_eleve")
+        self.l_resultat_ajout_eleve.setGeometry(QRect(40, 210, 441, 21))
         self.groupBox_2 = QGroupBox(self.tab_4)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.groupBox_2.setGeometry(QRect(580, 120, 510, 281))
@@ -523,13 +692,46 @@ class Ui_AppBancMot_prof(object):
         self.pb_piloter_frein_manuel.setText(QCoreApplication.translate("AppBancMot_prof", u"Piloter Frein Manuel", None))
         self.pb_piloter_frein_profil.setText(QCoreApplication.translate("AppBancMot_prof", u"Piloter Frein Profils", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("AppBancMot_prof", u"Informations", None))
+        self.l_info.setText("")
+        self.l_tension.setText(QCoreApplication.translate("AppBancMot_prof", u"Tension : ", None))
+        self.l_couple.setText(QCoreApplication.translate("AppBancMot_prof", u"Couple : ", None))
+        self.l_courant.setText(QCoreApplication.translate("AppBancMot_prof", u"Courant : ", None))
+        self.l_vitesse.setText(QCoreApplication.translate("AppBancMot_prof", u"Vitesse :", None))
+        self.l_puissance.setText(QCoreApplication.translate("AppBancMot_prof", u"Puissance : ", None))
+        self.l_axeY.setText(QCoreApplication.translate("AppBancMot_prof", u"Grandeurs \n"
+" choisie", None))
+        self.cBoxAxeY.setItemText(0, "")
+        self.cBoxAxeY.setItemText(1, QCoreApplication.translate("AppBancMot_prof", u"tension", None))
+        self.cBoxAxeY.setItemText(2, QCoreApplication.translate("AppBancMot_prof", u"courant", None))
+        self.cBoxAxeY.setItemText(3, QCoreApplication.translate("AppBancMot_prof", u"puissance", None))
+        self.cBoxAxeY.setItemText(4, QCoreApplication.translate("AppBancMot_prof", u"couple", None))
+        self.cBoxAxeY.setItemText(5, QCoreApplication.translate("AppBancMot_prof", u"vitesse", None))
+
+        self.pb_valider_axe.setText(QCoreApplication.translate("AppBancMot_prof", u"Valider", None))
         self.pb_deconnecter.setText(QCoreApplication.translate("AppBancMot_prof", u"D\u00e9connexion", None))
         self.pb_demarrer_cycle.setText(QCoreApplication.translate("AppBancMot_prof", u"D\u00e9marrer un cycle", None))
         self.gBox_liste_essai.setTitle(QCoreApplication.translate("AppBancMot_prof", u"Liste Essais R\u00e9alis\u00e9s", None))
         self.pb_selectionner_essai.setText(QCoreApplication.translate("AppBancMot_prof", u"S\u00e9lectionner", None))
         self.pb_actualiser_liste_essai.setText(QCoreApplication.translate("AppBancMot_prof", u"Actualiser", None))
+        ___qtablewidgetitem = self.tE_listeEssai.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("AppBancMot_prof", u"id", None));
+        ___qtablewidgetitem1 = self.tE_listeEssai.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("AppBancMot_prof", u"eleve", None));
+        ___qtablewidgetitem2 = self.tE_listeEssai.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("AppBancMot_prof", u"classe", None));
+        ___qtablewidgetitem3 = self.tE_listeEssai.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("AppBancMot_prof", u"date", None));
+        ___qtablewidgetitem4 = self.tE_listeEssai.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("AppBancMot_prof", u"moteur", None));
+        self.pb_trierListeEssai.setText(QCoreApplication.translate("AppBancMot_prof", u"Trier", None))
+        self.cB_listeTries.setItemText(0, "")
+        self.cB_listeTries.setItemText(1, QCoreApplication.translate("AppBancMot_prof", u"par \u00e9tudiant", None))
+        self.cB_listeTries.setItemText(2, QCoreApplication.translate("AppBancMot_prof", u"par date", None))
+        self.cB_listeTries.setItemText(3, QCoreApplication.translate("AppBancMot_prof", u"par moteur", None))
+
+        self.l_choix_essai.setText("")
         self.pb_choisir_moteur.setText(QCoreApplication.translate("AppBancMot_prof", u"Choisir un moteur ", None))
-        self.l_moteur.setText(QCoreApplication.translate("AppBancMot_prof", u"TextLabel", None))
+        self.l_moteur.setText("")
         self.tab_administration.setTabText(self.tab_administration.indexOf(self.tab_3), QCoreApplication.translate("AppBancMot_prof", u"Accueil", None))
         self.tab_administration.setTabText(self.tab_administration.indexOf(self.tab), QCoreApplication.translate("AppBancMot_prof", u"Aide", None))
         self.pb_valider_2AF.setText(QCoreApplication.translate("AppBancMot_prof", u"Valider", None))
@@ -545,6 +747,7 @@ class Ui_AppBancMot_prof(object):
         self.label_6.setText(QCoreApplication.translate("AppBancMot_prof", u"Identifiant", None))
         self.label_7.setText(QCoreApplication.translate("AppBancMot_prof", u"Mot de passe", None))
         self.pb_valider_ajout_eleve.setText(QCoreApplication.translate("AppBancMot_prof", u"Valider", None))
+        self.l_resultat_ajout_eleve.setText("")
         self.groupBox_2.setTitle(QCoreApplication.translate("AppBancMot_prof", u"Importer un fichier csv", None))
         self.pb_choix_fichierCSV.setText(QCoreApplication.translate("AppBancMot_prof", u"Choisir un fichier CSV ", None))
         self.l_nomFichier.setText("")

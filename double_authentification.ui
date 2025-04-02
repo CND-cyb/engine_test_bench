@@ -121,6 +121,19 @@ QPushButton:pressed {
     <string>Retour</string>
    </property>
   </widget>
+  <widget class="QLabel" name="l_erreur">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>100</y>
+     <width>241</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

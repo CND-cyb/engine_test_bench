@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'pilotage_frein_profilzEwppC.ui'
+## Form generated from reading UI file 'pilotage_frein_profil.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -314,10 +314,10 @@ class Ui_Form(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.pb_valider_profil4_2 = QPushButton(self.profil3)
-        self.pb_valider_profil4_2.setObjectName(u"pb_valider_profil4_2")
-        self.pb_valider_profil4_2.setGeometry(QRect(60, 170, 91, 31))
-        self.pb_valider_profil4_2.setStyleSheet(u"QPushButton {\n"
+        self.pb_valider_profil3 = QPushButton(self.profil3)
+        self.pb_valider_profil3.setObjectName(u"pb_valider_profil3")
+        self.pb_valider_profil3.setGeometry(QRect(60, 170, 91, 31))
+        self.pb_valider_profil3.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
 "    border-radius: 5px;\n"
@@ -397,42 +397,42 @@ class Ui_Form(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.l_profil1_vitesse_4 = QLabel(self.profil4)
-        self.l_profil1_vitesse_4.setObjectName(u"l_profil1_vitesse_4")
-        self.l_profil1_vitesse_4.setGeometry(QRect(335, 120, 41, 21))
-        self.l_profil1_couple_4 = QLabel(self.profil4)
-        self.l_profil1_couple_4.setObjectName(u"l_profil1_couple_4")
-        self.l_profil1_couple_4.setGeometry(QRect(333, 150, 51, 31))
-        self.l_profil1_courant_4 = QLabel(self.profil4)
-        self.l_profil1_courant_4.setObjectName(u"l_profil1_courant_4")
-        self.l_profil1_courant_4.setGeometry(QRect(325, 90, 52, 16))
-        self.l_profil1_moteur_tension_4 = QLabel(self.profil4)
-        self.l_profil1_moteur_tension_4.setObjectName(u"l_profil1_moteur_tension_4")
-        self.l_profil1_moteur_tension_4.setGeometry(QRect(610, 50, 51, 21))
-        self.l_profil1_moteur_couple_4 = QLabel(self.profil4)
-        self.l_profil1_moteur_couple_4.setObjectName(u"l_profil1_moteur_couple_4")
-        self.l_profil1_moteur_couple_4.setGeometry(QRect(612, 120, 51, 21))
-        self.l_profil1_moteur_pUtile_4 = QLabel(self.profil4)
-        self.l_profil1_moteur_pUtile_4.setObjectName(u"l_profil1_moteur_pUtile_4")
-        self.l_profil1_moteur_pUtile_4.setGeometry(QRect(618, 150, 51, 31))
+        self.l_profil4_vitesse = QLabel(self.profil4)
+        self.l_profil4_vitesse.setObjectName(u"l_profil4_vitesse")
+        self.l_profil4_vitesse.setGeometry(QRect(335, 120, 41, 21))
+        self.l_profil4_couple = QLabel(self.profil4)
+        self.l_profil4_couple.setObjectName(u"l_profil4_couple")
+        self.l_profil4_couple.setGeometry(QRect(333, 150, 51, 31))
+        self.l_profil4_courant = QLabel(self.profil4)
+        self.l_profil4_courant.setObjectName(u"l_profil4_courant")
+        self.l_profil4_courant.setGeometry(QRect(325, 90, 52, 16))
+        self.l_profil4_moteur_tension = QLabel(self.profil4)
+        self.l_profil4_moteur_tension.setObjectName(u"l_profil4_moteur_tension")
+        self.l_profil4_moteur_tension.setGeometry(QRect(610, 50, 51, 21))
+        self.l_profil4_moteur_couple = QLabel(self.profil4)
+        self.l_profil4_moteur_couple.setObjectName(u"l_profil4_moteur_couple")
+        self.l_profil4_moteur_couple.setGeometry(QRect(612, 120, 51, 21))
+        self.l_profil4_moteur_pUtile = QLabel(self.profil4)
+        self.l_profil4_moteur_pUtile.setObjectName(u"l_profil4_moteur_pUtile")
+        self.l_profil4_moteur_pUtile.setGeometry(QRect(618, 150, 51, 31))
         self.label_12 = QLabel(self.profil4)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setGeometry(QRect(380, 20, 51, 16))
-        self.l_profil1_pUtile_4 = QLabel(self.profil4)
-        self.l_profil1_pUtile_4.setObjectName(u"l_profil1_pUtile_4")
-        self.l_profil1_pUtile_4.setGeometry(QRect(340, 190, 41, 31))
+        self.l_profil4_pUtile = QLabel(self.profil4)
+        self.l_profil4_pUtile.setObjectName(u"l_profil4_pUtile")
+        self.l_profil4_pUtile.setGeometry(QRect(340, 190, 41, 31))
         self.label_13 = QLabel(self.profil4)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setGeometry(QRect(620, 10, 171, 21))
-        self.l_profil1_tension_4 = QLabel(self.profil4)
-        self.l_profil1_tension_4.setObjectName(u"l_profil1_tension_4")
-        self.l_profil1_tension_4.setGeometry(QRect(330, 50, 51, 21))
-        self.l_profil1_typeMoteur_4 = QLabel(self.profil4)
-        self.l_profil1_typeMoteur_4.setObjectName(u"l_profil1_typeMoteur_4")
-        self.l_profil1_typeMoteur_4.setGeometry(QRect(610, 190, 131, 16))
-        self.l_profil1_moteur_courant_4 = QLabel(self.profil4)
-        self.l_profil1_moteur_courant_4.setObjectName(u"l_profil1_moteur_courant_4")
-        self.l_profil1_moteur_courant_4.setGeometry(QRect(605, 90, 52, 16))
+        self.l_profil4_tension = QLabel(self.profil4)
+        self.l_profil4_tension.setObjectName(u"l_profil4_tension")
+        self.l_profil4_tension.setGeometry(QRect(330, 50, 51, 21))
+        self.l_profil4_typeMoteur = QLabel(self.profil4)
+        self.l_profil4_typeMoteur.setObjectName(u"l_profil4_typeMoteur")
+        self.l_profil4_typeMoteur.setGeometry(QRect(610, 190, 131, 16))
+        self.l_profil4_moteur_courant = QLabel(self.profil4)
+        self.l_profil4_moteur_courant.setObjectName(u"l_profil4_moteur_courant")
+        self.l_profil4_moteur_courant.setGeometry(QRect(605, 90, 52, 16))
         self.pb_retour_profil4 = QPushButton(self.profil4)
         self.pb_retour_profil4.setObjectName(u"pb_retour_profil4")
         self.pb_retour_profil4.setGeometry(QRect(349, 273, 101, 31))
@@ -600,7 +600,7 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(Form)
@@ -665,7 +665,7 @@ class Ui_Form(object):
         self.l_profil1_typeMoteur_3.setText(QCoreApplication.translate("Form", u"Type de Moteur : ", None))
         self.l_profil1_moteur_courant_3.setText(QCoreApplication.translate("Form", u"Courant  :", None))
         self.pb_retour_profil3.setText(QCoreApplication.translate("Form", u"Retour", None))
-        self.pb_valider_profil4_2.setText(QCoreApplication.translate("Form", u"Valider", None))
+        self.pb_valider_profil3.setText(QCoreApplication.translate("Form", u"Valider", None))
         self.label_19.setText(QCoreApplication.translate("Form", u"Ordonn\u00e9e \u00e0 l'origine \n"
 "de la courbe", None))
         self.label_18.setText(QCoreApplication.translate("Form", u"Coefficient directeur  \n"
@@ -676,18 +676,18 @@ class Ui_Form(object):
         self.label_4.setText(QCoreApplication.translate("Form", u"Coefficient directeur\n"
 " de la pente : ", None))
         self.pb_valider_profil4.setText(QCoreApplication.translate("Form", u"Valider", None))
-        self.l_profil1_vitesse_4.setText(QCoreApplication.translate("Form", u"Vitesse :", None))
-        self.l_profil1_couple_4.setText(QCoreApplication.translate("Form", u"Couple :", None))
-        self.l_profil1_courant_4.setText(QCoreApplication.translate("Form", u"Courant  :", None))
-        self.l_profil1_moteur_tension_4.setText(QCoreApplication.translate("Form", u"Tension :", None))
-        self.l_profil1_moteur_couple_4.setText(QCoreApplication.translate("Form", u"Couple :", None))
-        self.l_profil1_moteur_pUtile_4.setText(QCoreApplication.translate("Form", u"PUtile :", None))
+        self.l_profil4_vitesse.setText(QCoreApplication.translate("Form", u"Vitesse :", None))
+        self.l_profil4_couple.setText(QCoreApplication.translate("Form", u"Couple :", None))
+        self.l_profil4_courant.setText(QCoreApplication.translate("Form", u"Courant  :", None))
+        self.l_profil4_moteur_tension.setText(QCoreApplication.translate("Form", u"Tension :", None))
+        self.l_profil4_moteur_couple.setText(QCoreApplication.translate("Form", u"Couple :", None))
+        self.l_profil4_moteur_pUtile.setText(QCoreApplication.translate("Form", u"PUtile :", None))
         self.label_12.setText(QCoreApplication.translate("Form", u"Valeurs", None))
-        self.l_profil1_pUtile_4.setText(QCoreApplication.translate("Form", u"PUtile : ", None))
+        self.l_profil4_pUtile.setText(QCoreApplication.translate("Form", u"PUtile : ", None))
         self.label_13.setText(QCoreApplication.translate("Form", u"Caract\u00e9ristiques du moteur ", None))
-        self.l_profil1_tension_4.setText(QCoreApplication.translate("Form", u"Tension :", None))
-        self.l_profil1_typeMoteur_4.setText(QCoreApplication.translate("Form", u"Type de Moteur : ", None))
-        self.l_profil1_moteur_courant_4.setText(QCoreApplication.translate("Form", u"Courant  :", None))
+        self.l_profil4_tension.setText(QCoreApplication.translate("Form", u"Tension :", None))
+        self.l_profil4_typeMoteur.setText(QCoreApplication.translate("Form", u"Type de Moteur : ", None))
+        self.l_profil4_moteur_courant.setText(QCoreApplication.translate("Form", u"Courant  :", None))
         self.pb_retour_profil4.setText(QCoreApplication.translate("Form", u"Retour", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.profil4), QCoreApplication.translate("Form", u"Profil 4 ", None))
         self.l_profil1_vitesse_5.setText(QCoreApplication.translate("Form", u"Vitesse :", None))

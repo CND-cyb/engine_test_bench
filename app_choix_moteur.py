@@ -15,7 +15,7 @@ class AppChoixMoteur(QWidget):
         print(f"Utilisateur connecté : {self.identifiant}")  # Affichage en console"""
 
 
-    def choisirMoteur(self,identifiant):
+    def choisirMoteur(self):
         moteurs = {
             self.ui.rB_moteur1: 1,
             self.ui.rB_moteur2: 2,
@@ -34,7 +34,7 @@ class AppChoixMoteur(QWidget):
             print("Moteur sélectionné :",moteur_choisi)
             self.publish_to_mqtt(moteur_choisi)
         from CAccueil_prof import AppBancMotProf
-        self.accueil=AppBancMotProf(identifiant)
+        self.accueil=AppBancMotProf(self.identifiant,moteur_choisi)
         self.accueil.show()
         self.close()
             

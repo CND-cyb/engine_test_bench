@@ -23,7 +23,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(1050, 620)
+        Form.resize(1073, 646)
         Form.setStyleSheet(u"QWidget {\n"
 "    background-color: #ffffff; /* Fond blanc */\n"
 "}")
@@ -189,10 +189,10 @@ class Ui_Form(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.groupBox_3 = QGroupBox(self.tab_3)
-        self.groupBox_3.setObjectName(u"groupBox_3")
-        self.groupBox_3.setGeometry(QRect(340, 110, 431, 381))
-        self.groupBox_3.setStyleSheet(u"QGroupBox {\n"
+        self.gB_informations = QGroupBox(self.tab_3)
+        self.gB_informations.setObjectName(u"gB_informations")
+        self.gB_informations.setGeometry(QRect(340, 110, 431, 381))
+        self.gB_informations.setStyleSheet(u"QGroupBox {\n"
 "    background-color: #f5f5f5;\n"
 "    border: 1px solid #bdc3c7;\n"
 "    border-radius: 4px;\n"
@@ -344,10 +344,10 @@ class Ui_Form(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.pb_demarrer_cycle_3 = QPushButton(self.tab_3)
-        self.pb_demarrer_cycle_3.setObjectName(u"pb_demarrer_cycle_3")
-        self.pb_demarrer_cycle_3.setGeometry(QRect(350, 30, 141, 41))
-        self.pb_demarrer_cycle_3.setStyleSheet(u"QPushButton {\n"
+        self.pb_choisir_moteur = QPushButton(self.tab_3)
+        self.pb_choisir_moteur.setObjectName(u"pb_choisir_moteur")
+        self.pb_choisir_moteur.setGeometry(QRect(350, 30, 141, 41))
+        self.pb_choisir_moteur.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
 "    border-radius: 5px;\n"
@@ -364,6 +364,9 @@ class Ui_Form(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
+        self.l_moteur = QLabel(self.tab_3)
+        self.l_moteur.setObjectName(u"l_moteur")
+        self.l_moteur.setGeometry(QRect(380, 80, 351, 16))
         self.tabWidget.addTab(self.tab_3, "")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
@@ -440,26 +443,6 @@ class Ui_Form(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.pb_demarrer_cycle_2 = QPushButton(Form)
-        self.pb_demarrer_cycle_2.setObjectName(u"pb_demarrer_cycle_2")
-        self.pb_demarrer_cycle_2.setGeometry(QRect(870, 580, 131, 41))
-        self.pb_demarrer_cycle_2.setStyleSheet(u"QPushButton {\n"
-"    background-color: #dfe6e9;\n"
-"    border: 1px solid #b2bec3;\n"
-"    border-radius: 5px;\n"
-"    color: #2d3436;\n"
-"    padding: 6px 12px;\n"
-"    font: 13px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b2bec3;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #636e72;\n"
-"    color: #ffffff;\n"
-"}")
 
         self.retranslateUi(Form)
 
@@ -477,13 +460,14 @@ class Ui_Form(object):
         self.pb_parametrer_capteurs.setText(QCoreApplication.translate("Form", u"Param\u00e9trer Capteurs", None))
         self.pb_piloter_frein_manuel.setText(QCoreApplication.translate("Form", u"Piloter Frein Manuel", None))
         self.pb_piloter_frein_profil.setText(QCoreApplication.translate("Form", u"Piloter Frein Profils", None))
-        self.groupBox_3.setTitle(QCoreApplication.translate("Form", u"Informations", None))
+        self.gB_informations.setTitle(QCoreApplication.translate("Form", u"Informations", None))
         self.pb_deconnexion.setText(QCoreApplication.translate("Form", u"D\u00e9connexion", None))
         self.pb_demarrer_cycle.setText(QCoreApplication.translate("Form", u"D\u00e9marrer un cycle", None))
         self.gBox_liste_essai.setTitle(QCoreApplication.translate("Form", u"Liste Essais R\u00e9alis\u00e9s", None))
         self.pb_selection_essai.setText(QCoreApplication.translate("Form", u"S\u00e9lectionner", None))
         self.pb_actualiser.setText(QCoreApplication.translate("Form", u"Actualiser", None))
-        self.pb_demarrer_cycle_3.setText(QCoreApplication.translate("Form", u"Choisir un moteur ", None))
+        self.pb_choisir_moteur.setText(QCoreApplication.translate("Form", u"Choisir un moteur ", None))
+        self.l_moteur.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Form", u"Accueil", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("Form", u"Aide", None))
         self.pb_valider_2AF.setText(QCoreApplication.translate("Form", u"Valider", None))
@@ -493,6 +477,5 @@ class Ui_Form(object):
         self.qr_label.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("Form", u"Param\u00e8tres", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"Quitter", None))
-        self.pb_demarrer_cycle_2.setText(QCoreApplication.translate("Form", u"D\u00e9marrer un cycle", None))
     # retranslateUi
 

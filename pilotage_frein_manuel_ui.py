@@ -22,7 +22,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(998, 182)
+        Form.resize(800, 512)
         Form.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -40,10 +40,10 @@ class Ui_Form(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.pb_marche = QPushButton(Form)
-        self.pb_marche.setObjectName(u"pb_marche")
-        self.pb_marche.setGeometry(QRect(310, 340, 81, 31))
-        self.pb_marche.setStyleSheet(u"QPushButton {\n"
+        self.pb_marche_frein = QPushButton(Form)
+        self.pb_marche_frein.setObjectName(u"pb_marche_frein")
+        self.pb_marche_frein.setGeometry(QRect(310, 340, 81, 31))
+        self.pb_marche_frein.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
 "    border-radius: 5px;\n"
@@ -60,10 +60,10 @@ class Ui_Form(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.pb_arret = QPushButton(Form)
-        self.pb_arret.setObjectName(u"pb_arret")
-        self.pb_arret.setGeometry(QRect(470, 340, 81, 31))
-        self.pb_arret.setStyleSheet(u"QPushButton {\n"
+        self.pb_arret_frein = QPushButton(Form)
+        self.pb_arret_frein.setObjectName(u"pb_arret_frein")
+        self.pb_arret_frein.setGeometry(QRect(470, 340, 81, 31))
+        self.pb_arret_frein.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
 "    border-radius: 5px;\n"
@@ -80,10 +80,10 @@ class Ui_Form(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.pb_valider = QPushButton(Form)
-        self.pb_valider.setObjectName(u"pb_valider")
-        self.pb_valider.setGeometry(QRect(390, 280, 81, 31))
-        self.pb_valider.setStyleSheet(u"QPushButton {\n"
+        self.pb_valider_consigne_frein = QPushButton(Form)
+        self.pb_valider_consigne_frein.setObjectName(u"pb_valider_consigne_frein")
+        self.pb_valider_consigne_frein.setGeometry(QRect(390, 280, 81, 31))
+        self.pb_valider_consigne_frein.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
 "    border-radius: 5px;\n"
@@ -141,9 +141,9 @@ class Ui_Form(object):
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(350, 80, 151, 51))
-        self.pb_quitter = QPushButton(Form)
-        self.pb_quitter.setObjectName(u"pb_quitter")
-        self.pb_quitter.setGeometry(QRect(390, 440, 81, 31))
+        self.pb_retour_pilotage_frein = QPushButton(Form)
+        self.pb_retour_pilotage_frein.setObjectName(u"pb_retour_pilotage_frein")
+        self.pb_retour_pilotage_frein.setGeometry(QRect(390, 440, 81, 31))
 
         self.retranslateUi(Form)
 
@@ -152,10 +152,10 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.pb_marche.setText(QCoreApplication.translate("Form", u"Marche ", None))
-        self.pb_arret.setText(QCoreApplication.translate("Form", u"Arr\u00eat ", None))
-        self.pb_valider.setText(QCoreApplication.translate("Form", u"Valider", None))
+        self.pb_marche_frein.setText(QCoreApplication.translate("Form", u"Marche ", None))
+        self.pb_arret_frein.setText(QCoreApplication.translate("Form", u"Arr\u00eat ", None))
+        self.pb_valider_consigne_frein.setText(QCoreApplication.translate("Form", u"Valider", None))
         self.label.setText(QCoreApplication.translate("Form", u"Choisir la consigne de frein ", None))
-        self.pb_quitter.setText(QCoreApplication.translate("Form", u"Quitter", None))
+        self.pb_retour_pilotage_frein.setText(QCoreApplication.translate("Form", u"Retour", None))
     # retranslateUi
 
