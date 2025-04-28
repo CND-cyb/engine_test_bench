@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>440</width>
     <height>512</height>
    </rect>
   </property>
@@ -32,75 +32,11 @@ QPushButton:pressed {
     color: #ffffff;
 }</string>
   </property>
-  <widget class="QPushButton" name="pb_marche_frein">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>340</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-    background-color: #dfe6e9;
-    border: 1px solid #b2bec3;
-    border-radius: 5px;
-    color: #2d3436;
-    padding: 6px 12px;
-    font: 13px;
-}
-
-QPushButton:hover {
-    background-color: #b2bec3;
-}
-
-QPushButton:pressed {
-    background-color: #636e72;
-    color: #ffffff;
-}</string>
-   </property>
-   <property name="text">
-    <string>Marche </string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_arret_frein">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>340</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-    background-color: #dfe6e9;
-    border: 1px solid #b2bec3;
-    border-radius: 5px;
-    color: #2d3436;
-    padding: 6px 12px;
-    font: 13px;
-}
-
-QPushButton:hover {
-    background-color: #b2bec3;
-}
-
-QPushButton:pressed {
-    background-color: #636e72;
-    color: #ffffff;
-}</string>
-   </property>
-   <property name="text">
-    <string>Arrêt </string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pb_valider_consigne_frein">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>280</y>
+     <x>190</x>
+     <y>260</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -131,8 +67,8 @@ QPushButton:pressed {
   <widget class="QSpinBox" name="sB_valeurFrein">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>210</y>
+     <x>210</x>
+     <y>190</y>
      <width>42</width>
      <height>22</height>
     </rect>
@@ -144,8 +80,8 @@ QPushButton:pressed {
   <widget class="QSlider" name="slider_valeurFrein">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>180</y>
+     <x>140</x>
+     <y>160</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -191,8 +127,8 @@ QSlider::add-page:horizontal {
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>80</y>
+     <x>150</x>
+     <y>60</y>
      <width>151</width>
      <height>51</height>
     </rect>
@@ -204,8 +140,8 @@ QSlider::add-page:horizontal {
   <widget class="QPushButton" name="pb_retour_pilotage_frein">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>440</y>
+     <x>190</x>
+     <y>340</y>
      <width>81</width>
      <height>31</height>
     </rect>
