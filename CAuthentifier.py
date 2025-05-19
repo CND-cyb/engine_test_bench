@@ -1,7 +1,7 @@
 import sys
 import mysql.connector
 import bcrypt
-from PySide6.QtWidgets import QApplication, QWidget, QLineEdit
+from PyQt6.QtWidgets import QApplication, QWidget, QLineEdit
 from authentifier import Ui_Connexion
 from C2AF import Double_Auth
 from CAccueil import AppBancMot  

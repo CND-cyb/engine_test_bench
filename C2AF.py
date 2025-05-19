@@ -2,7 +2,7 @@ from double_authentification_ui import Ui_Double_Auth
 import mysql.connector
 import bcrypt
 import pyotp
-from PySide6.QtWidgets import QApplication, QWidget, QLineEdit
+from PyQt6.QtWidgets import QApplication, QWidget, QLineEdit
 from authentifier import Ui_Connexion
 from CAccueil import AppBancMot  
 from CAccueil_prof import AppBancMotProf

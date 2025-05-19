@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import QApplication, QWidget
+from PyQt6.QtWidgets import QApplication, QWidget
 from ui_pilotage_frein_manuel import Ui_Form
 import paho.mqtt.client as mqtt 
 

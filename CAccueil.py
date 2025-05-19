@@ -2,9 +2,9 @@ import sys
 import qrcode
 import pyotp  
 import mysql.connector
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QApplication, QWidget
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import QApplication, QWidget
 from accueil import Ui_Form  
 from app_choix_moteur import AppChoixMoteur
 
