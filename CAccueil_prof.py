@@ -3,12 +3,14 @@ import qrcode
 import pyotp  
 import mysql.connector
 import bcrypt
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QApplication, QWidget, QFileDialog, QTableWidgetItem, QComboBox, QLineEdit, QVBoxLayout
+from datetime import datetime
+from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog, QTableWidgetItem, QComboBox, QLineEdit, QVBoxLayout
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure 
 import matplotlib.pyplot as plt
+import paho.mqtt.client as mqtt 
 from accueil_prof import Ui_AppBancMot_prof  
 from app_choix_moteur import AppChoixMoteur
 from app_pilotage import AppPilotage
@@ -52,8 +54,11 @@ class AppBancMotProf(QWidget):
         self.generate_qr_code(self.otp_uri)
         # Connecter le bouton de validation
         self.ui.pb_valider_2AF.clicked.connect(self.verify_totp)
-        self.ui.pb_choisir_moteur.clicked.connect(self.choisirMoteur)
         self.ui.pb_deconnecter.clicked.connect(self.deconnexion)
+        self.ui.pb_deconnecter_2.clicked.connect(self.deconnexion)
+        self.ui.pb_deconnecter_5.clicked.connect(self.deconnexion)
+        self.ui.pb_deconnecter_6.clicked.connect(self.deconnexion)
+        self.ui.pb_deconnecter_7.clicked.connect(self.deconnexion)
         self.ui.pb_actualiser_liste_essai.clicked.connect(self.recuperer_donnee)
         self.ui.pb_trierListeEssai.clicked.connect(self.trierListe)
         self.ui.pb_selectionner_essai.clicked.connect(self.selectionnerEssai)
@@ -61,79 +66,61 @@ class AppBancMotProf(QWidget):
         self.ui.pb_choix_fichierCSV.clicked.connect(self.choixFichierEleve)
         self.ui.pb_piloter_frein_manuel.clicked.connect(self.piloterFreinManuel)
         self.ui.pb_piloter_frein_profil.clicked.connect(self.piloterFreinProfil)
-        self.ui.pb_visualiser_grandeurs.clicked.connect(self.visualiserGrandeurs)
         self.ui.pb_generer_caracteristique.clicked.connect(self.genererCaracteristique)
         self.ui.pb_valider_axe.clicked.connect(self.validerAxe)
         self.ui.pb_choix_moteur.clicked.connect(self.selectionMoteur)
         self.ui.pb_ajouter_moteur.clicked.connect(self.ajouterMoteur)
         self.ui.pb_modifier_moteur.clicked.connect(self.modifierMoteur)
         self.ui.pb_supprimer_moteur.clicked.connect(self.supprimerMoteur)
+        self.ui.pb_demarrer_cycle.clicked.connect(self.demarrerCycle)
+        self.ui.pb_arreter_cycle.clicked.connect(self.arreterCycle)
         "self.ui.pb_valider_ajout_eleve_csv.connect(self.ajouterEleveCsv)"
-        match moteur_choisi:
-            case None:
-                self.ui.l_moteur.setText("Aucun moteur choisi")
-            case 1:
-                self.ui.l_moteur.setText("Moteur asynchrone 300 W (MAS) choisi")
-            case 2:
-                self.ui.l_moteur.setText("Moteur asynchrone 1.5 kW (MAS) choisi")
-            case 3:
-                self.ui.l_moteur.setText("Moteur à courant continu 0.18 kW (Mcc) choisi")
-            case 4:
-                self.ui.l_moteur.setText("Moteur à courant continu 0.46 kW (Mcc) choisi")
-            case 5:
-                self.ui.l_moteur.setText("Moteur à courant continu 0.7 kW (Mcc) choisi")
-            case 6:
-                self.ui.l_moteur.setText("Moteur à courant continu 0.85 kW (Mcc) choisi")
-            case 7:
-                self.ui.l_moteur.setText("Moteur à courant continu 1.15 kW (Mcc) choisi")
-            case 8:
-                self.ui.l_moteur.setText("Moteur à courant continu 1.5 kW (Mcc) choisi")
         self.show()
         
     def validerAxe(self):
-        # Dictionnaire associant un index à un type de mesure
-        axesValeurs = {1:"tension",2:"courant",3:"puissance",4:"couple",5:"vitesse_moteur"}
-        self.ui.w_graphique.setVisible(True)  # Affichage du widget graphique
-        # Récupération de l'index sélectionné et de l'étiquette correspondante
+        axesValeurs = {1:"tension", 2:"courant", 3:"puissance", 4:"couple", 5:"vitesse_moteur"}
+        self.ui.w_graphique.setVisible(True)
+
         axeY = self.ui.cBoxAxeX.currentIndex()
         axeX = self.ui.cBoxAxeY.currentIndex()
         labelY = axesValeurs.get(axeY)
         labelX = axesValeurs.get(axeX)
-        # Paramètres de connexion à la base de données
+
         host, user, db_password, database = 'localhost', 'root', '', 'eguidat_banc_moteur'
+
         try:
-            # Connexion à la base de données MySQL et exécution de la requête
             connection = mysql.connector.connect(host=host, user=user, password=db_password, database=database)
             cursor = connection.cursor()
-            requete = f"SELECT temps,{labelY}, {labelX} FROM essai WHERE id_essai=%s"
+            requete = f"SELECT temps,{labelY},{labelX} FROM essai WHERE id_essai=%s"
             cursor.execute(requete, (self.idChoisi,))
             result = cursor.fetchall()
-            # Initialisation des listes pour stocker les données des axes X et Y
+
             valeurAxeX, valeurAxeY = [], []
             for row in result:
-                valeurAxeX.extend(self.convert_to_float_array(row[0]))
                 valeurAxeY.extend(self.convert_to_float_array(row[1]))
-            # Vérification de la présence de données avant de tracer le graphique
+                valeurAxeX.extend(self.convert_to_float_array(row[2]))
+
             if not valeurAxeX or not valeurAxeY:
                 print("Données vides, impossible de tracer le graphique.")
                 return
+            if len(valeurAxeX) != len(valeurAxeY):
+                print(f"Erreur : {len(valeurAxeX)} valeurs X mais {len(valeurAxeY)} valeurs Y.")
+                return
+
         except mysql.connector.Error as e:
             print(f"Erreur MySQL : {e}")
             return
-        # Suppression des anciens widgets affichés dans le graphique
+
         for i in reversed(range(self.ui.w_graphique.layout().count())):
             self.ui.w_graphique.layout().itemAt(i).widget().deleteLater()
-        # Affichage des tailles des listes pour le débogage
-        print("Taille de valeurAxeX:", len(valeurAxeX))
-        print("Taille de valeurAxeY:", len(valeurAxeY))
-        # Création et affichage du graphique
+
         fig, ax = plt.subplots()
         ax.plot(valeurAxeX, valeurAxeY, marker="o", linestyle="-", color="b")
         ax.set_xlabel(labelX)
         ax.set_ylabel(labelY)
-        ax.set_title(f"Graphique de {labelX} en fonction de {labelY}")
+        ax.set_title(f"Graphique de {labelY} en fonction de {labelX}")
         fig.tight_layout()
-        # Ajout du graphique à l'interface
+
         canvas = FigureCanvas(fig)
         layout = self.ui.w_graphique.layout()
         if layout is None:
@@ -141,6 +128,7 @@ class AppBancMotProf(QWidget):
             self.ui.w_graphique.setLayout(layout)
         layout.addWidget(canvas)
         canvas.draw()
+
     
     def genererCaracteristique(self):
         self.ui.l_axeY.setVisible(True)
@@ -158,6 +146,107 @@ class AppBancMotProf(QWidget):
         self.AppPilotageProfil=AppPilotageProfil(self.identifiant, self.moteur_choisi)
         self.AppPilotageProfil.show()
         self.close()  
+        
+    def demarrerCycle(self):
+        broker = "192.168.2.100"
+        port = 1883
+        topics = ["Moteur/Ueff", "Moteur/Ieff", "Moteur/C", "Moteur/N", "Moteur/Numero"]
+        topicEtatMoteur = "Moteur/Etat"
+        topicNumeroMoteur = "Moteur/Numero"
+        mqtt_username = "bancmoteur"
+        mqtt_password = "CestGenialCeBts2025"
+        self.temps=[]
+        self.tension=[]
+        self.courant=[]
+        self.couple=[]
+        self.vitesse=[]
+        self.client = mqtt.Client()
+        self.client.username_pw_set(mqtt_username, mqtt_password)
+        self.client.on_message = self.on_message_received
+        self.client.connect(broker, port, 60)
+        for topic in topics:
+            self.client.subscribe(topic)
+        # Dictionnaire pour stocker les valeurs reçues
+        self.valeurs_moteur = {
+            "Moteur/Ueff": None,
+            "Moteur/Ieff": None,
+            "Moteur/C": None,
+            "Moteur/N": None
+        }
+        self.client.loop_start()
+        # Publier les informations initiales
+        self.client.publish(topicEtatMoteur, "Marche")
+        self.client.publish(topicNumeroMoteur, str(self.moteur_choisi))  # Envoie du numéro de moteur
+
+  
+
+    def on_message_received(self, client, userdata, message):
+        try:
+            topic = message.topic
+            payload = message.payload.decode("utf-8")
+
+            if topic in self.valeurs_moteur:
+                self.valeurs_moteur[topic] = payload
+
+                # Vérifie si toutes les valeurs sont présentes
+                if all(value is not None for value in self.valeurs_moteur.values()):
+                    texte = (
+                        f"Tension : {self.valeurs_moteur['Moteur/Ueff']}\n"
+                        f"Courant : {self.valeurs_moteur['Moteur/Ieff']}\n"
+                        f"Couple : {self.valeurs_moteur['Moteur/C']}\n"
+                        f"Vitesse : {self.valeurs_moteur['Moteur/N']}\n"
+                        f"-----"
+                    )
+                    self.ui.tE_valeur_temps_reel.append(texte)
+                    self.tension.append(self.valeurs_moteur['Moteur/Ueff'])
+                    self.courant.append(self.valeurs_moteur['Moteur/Ieff'])
+                    self.couple.append(self.valeurs_moteur['Moteur/C'])
+                    self.vitesse.append(self.valeurs_moteur['Moteur/N'])
+                    # Réinitialise les valeurs pour attendre un nouveau lot
+                    for key in self.valeurs_moteur:
+                        self.valeurs_moteur[key] = None
+
+            elif topic == "Moteur/Numero":
+                self.ui.tE_valeur_temps_reel.append(f"Numéro de moteur : {payload}\n")
+
+        except Exception as e:
+            print("Erreur réception MQTT :", e)
+
+    
+        
+    def arreterCycle(self):
+        if self.client is not None:
+            try:
+                self.client.loop_stop()
+                self.client.disconnect()
+                self.client = None  
+                self.ui.tE_valeur_temps_reel.append("Cycle arrêté.")
+                host = 'localhost'
+                user = 'root'
+                db_password = ''
+                database = 'eguidat_banc_moteur'
+                connection = mysql.connector.connect(
+                    host=host,
+                    user=user,
+                    password=db_password,
+                    database=database
+                )
+                cursor = connection.cursor()
+                date_essai = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+                identifiant=self.identifiant
+                tension="["+";".join(self.tension)+"]"
+                courant="["+";".join(self.courant)+"]"
+                couple="["+";".join(self.couple)+"]"
+                vitesse_moteur="["+";".join(self.vitesse)+"]"
+                moteur_choisi=self.moteur_choisi
+                requete = """INSERT INTO essai (id_essai, date_essai, identifiant_eleve_essai,tension, courant, couple, vitesse_moteur,id_moteur, puissance, temps) 
+                VALUES ( NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s);"""
+                cursor.execute(requete,(date_essai,identifiant,tension,courant,couple,vitesse_moteur,moteur_choisi,str(0),str(0)))
+                connection.commit()
+                cursor.close()
+                connection.close()
+            except Exception as e:
+                self.ui.tE_valeur_temps_reel.append(f"Erreur à l'arrêt du cycle : {str(e)}")
         
     def selectionnerEssai(self):
         essaiChoisi=self.ui.tE_listeEssai.currentRow()
@@ -193,49 +282,6 @@ class AppBancMotProf(QWidget):
             print(f"Erreur de conversion de valeur : {e}")
             float_values = []
         return float_values
-
-
-    def visualiserGrandeurs(self):
-        host = 'localhost'
-        user = 'root'
-        db_password = ''
-        database = 'eguidat_banc_moteur'
-        try:
-            connection = mysql.connector.connect(
-                host=host,
-                user=user,
-                password=db_password,
-                database=database
-            )
-            cursor = connection.cursor()
-            requete = "SELECT tension,courant,couple,vitesse_moteur,puissance FROM essai WHERE id_essai=%s"
-            cursor.execute(requete, (self.idChoisi,))
-            result=cursor.fetchall()
-            tension=[]
-            courant=[]
-            couple=[]
-            vitesse_moteur=[]
-            puissance=[]
-            for row in result:
-                tension=self.convert_to_float_array(row[0])
-                courant=self.convert_to_float_array(row[1])
-                couple=self.convert_to_float_array(row[2])
-                vitesse_moteur=self.convert_to_float_array(row[3])
-                puissance=self.convert_to_float_array(row[4])
-            moyenneTension=round(sum(tension)/len(tension),2)
-            moyenneCourant=round(sum(courant)/len(courant),2)
-            moyenneCouple=round(sum(couple)/len(couple),2)
-            moyenneVitesse_moteur=round(sum(vitesse_moteur)/len(vitesse_moteur),2)
-            moyennePuissance=round(sum(puissance)/len(puissance),2)
-            self.ui.l_tension.setText(f"Tension : {moyenneTension} V")
-            self.ui.l_courant.setText(f"Courant : {moyenneCourant} A")
-            self.ui.l_couple.setText(f"Couple : {moyenneCouple} N/m")
-            self.ui.l_vitesse.setText(f"Vitesse : {moyenneVitesse_moteur} tr/min")
-            self.ui.l_puissance.setText(f"Puissance : {moyennePuissance} W")
-            self.ui.l_info.setText("Moyenne des grandeurs électriques et mécaniques :")
-
-        except mysql.connector.Error as e:
-            print(f"Erreur MySQL : {e}")
     
     def trierListe(self):
         # Récupère le filtre souhaité par l'utilisateur
@@ -334,13 +380,6 @@ class AppBancMotProf(QWidget):
     
     def deconnexion(self):
         self.close()
-
-    def choisirMoteur(self):
-        print("Bouton cliqué, lancement de AppChoixMoteur")  # Debug
-        self.choixMoteur = AppChoixMoteur(self.identifiant)
-        print("Fenêtre créée, affichage en cours...")  # Debug
-        self.choixMoteur.show()
-        self.close()  # Pour cacher au lieu de fermer
     
     def ajouterEleve(self):
         nom=self.ui.lE_nom_eleve.text().strip()
@@ -545,12 +584,38 @@ class AppBancMotProf(QWidget):
                 print(f"Erreur MySQL : {e}")
                 
     def selectionMoteur(self):
-        moteurChoisi=self.ui.tE_listeMoteur.currentRow()
-        if moteurChoisi != -1:
-            idMoteur=self.ui.tE_listeMoteur.item(moteurChoisi,0)
+        moteur_choisi=self.ui.tE_listeMoteur.currentRow()
+        if moteur_choisi != -1:
+            idMoteur=self.ui.tE_listeMoteur.item(moteur_choisi,0)
+            Unom=self.ui.tE_listeMoteur.item(moteur_choisi,1)
+            Inom=self.ui.tE_listeMoteur.item(moteur_choisi,2)
+            Cnom=self.ui.tE_listeMoteur.item(moteur_choisi,3)
+            Nnom=self.ui.tE_listeMoteur.item(moteur_choisi,4)
+            PUnom=self.ui.tE_listeMoteur.item(moteur_choisi,5)
+            type=self.ui.tE_listeMoteur.item(moteur_choisi,6)
             if idMoteur:
-                self.moteurChoisi=idMoteur.text()
-                self.ui.l_choix_moteur.setText(f"Identifiant du moteur choisi : {self.moteurChoisi}")
+                broker = "192.168.2.100"  
+                port = 1883 
+                topic1 = "Caracteristique/Unom"
+                topic2 = "Caracteristique/Inom"
+                topic3 = "Caracteristique/Cnom"
+                topic4 = "Caracteristique/Nnom"
+                topic5 = "Caracteristique/PUnom"
+                topic6 = "Caracteristique/Type"
+                mqtt_username = "bancmoteur" 
+                mqtt_password = "CestGenialCeBts2025"  
+                client = mqtt.Client()
+                client.username_pw_set(mqtt_username, mqtt_password)
+                client.connect(broker,port,60)
+                client.publish(topic1,str(Unom.text()))
+                client.publish(topic2,str(Inom.text()))
+                client.publish(topic3,str(Cnom.text()))
+                client.publish(topic4,str(Nnom.text()))
+                client.publish(topic5,str(PUnom.text()))
+                client.publish(topic6,str(type.text()))
+                client.disconnect()
+                self.moteur_choisi=idMoteur.text()
+                self.ui.l_choix_moteur.setText(f"Identifiant du moteur choisi : {self.moteur_choisi}")
             else : 
                 self.ui.l_choix_moteur.setText("Aucun moteur choisi.") 
         

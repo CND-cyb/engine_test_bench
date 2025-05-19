@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>961</width>
+    <width>943</width>
     <height>705</height>
    </rect>
   </property>
@@ -62,17 +62,17 @@ QComboBox QAbstractItemView {
    </item>
    <item>
     <property name="text">
-     <string>Couple de type : T = An+B</string>
+     <string>Couple de type : T = An+B (Fonction affine)</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Couple de type : T = An²+B</string>
+     <string>Couple de type : T = An²+B (Fonction carré)</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>Couple de type : T = An−1</string>
+     <string>Couple de type : T = An−1 (Fonction Inverse)</string>
     </property>
    </item>
    <item>
@@ -129,7 +129,7 @@ QPushButton:pressed {
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>60</x>
      <y>140</y>
      <width>861</width>
      <height>481</height>
@@ -145,14 +145,15 @@ QPushButton:pressed {
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>70</x>
        <y>50</y>
-       <width>91</width>
+       <width>61</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Couple Initial : </string>
+      <string>Consigne 
+du frein</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pb_valider_profil1">
@@ -187,7 +188,7 @@ QPushButton:pressed {
       <string>Valider</string>
      </property>
     </widget>
-    <widget class="QSpinBox" name="sB_coupleInitial">
+    <widget class="QSpinBox" name="sB_consigneFrein">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -197,13 +198,13 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="minimum">
-      <number>-10000</number>
+      <number>0</number>
      </property>
      <property name="maximum">
-      <number>10000</number>
+      <number>100</number>
      </property>
      <property name="singleStep">
-      <number>10</number>
+      <number>1</number>
      </property>
     </widget>
     <widget class="QLabel" name="label_34">
@@ -216,7 +217,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>Nm</string>
+      <string>%</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pb_retour_profil1">
@@ -279,11 +280,11 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>Coefficient directeur 
-de la courbe </string>
+      <string>Consigne du 
+frein de départ </string>
      </property>
     </widget>
-    <widget class="QSpinBox" name="sB_coefficientDirecteur_profil2">
+    <widget class="QSpinBox" name="sB_consigneFreinDepart_profil2">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -293,13 +294,13 @@ de la courbe </string>
       </rect>
      </property>
      <property name="minimum">
-      <number>-10000</number>
+      <number>0</number>
      </property>
      <property name="maximum">
-      <number>10000</number>
+      <number>100</number>
      </property>
      <property name="singleStep">
-      <number>10</number>
+      <number>1</number>
      </property>
     </widget>
     <widget class="QLabel" name="label_17">
@@ -312,11 +313,11 @@ de la courbe </string>
       </rect>
      </property>
      <property name="text">
-      <string>Ordonnée à l'origine 
-de la courbe </string>
+      <string>Consigne du 
+frein à atteindre</string>
      </property>
     </widget>
-    <widget class="QSpinBox" name="sB_ordonneeOrigine_profil2">
+    <widget class="QSpinBox" name="sB_consigneFreinFin_profil2">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -326,13 +327,13 @@ de la courbe </string>
       </rect>
      </property>
      <property name="minimum">
-      <number>-10000</number>
+      <number>0</number>
      </property>
      <property name="maximum">
-      <number>10000</number>
+      <number>100</number>
      </property>
      <property name="singleStep">
-      <number>10</number>
+      <number>1</number>
      </property>
     </widget>
     <widget class="QPushButton" name="pb_valider_profil2">
@@ -343,6 +344,25 @@ de la courbe </string>
        <width>101</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
      </property>
      <property name="text">
       <string>Valider</string>
@@ -393,6 +413,32 @@ QPushButton:pressed {
       <string/>
      </property>
     </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>208</x>
+       <y>50</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>208</x>
+       <y>110</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="profil3">
     <attribute name="title">
@@ -435,7 +481,7 @@ QPushButton:pressed {
       <rect>
        <x>60</x>
        <y>170</y>
-       <width>91</width>
+       <width>101</width>
        <height>31</height>
       </rect>
      </property>
@@ -472,8 +518,8 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>Ordonnée à l'origine 
-de la courbe</string>
+      <string>Consigne du 
+frein à atteindre</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_18">
@@ -486,11 +532,11 @@ de la courbe</string>
       </rect>
      </property>
      <property name="text">
-      <string>Coefficient directeur  
-de la courbe</string>
+      <string>Consigne du 
+frein de départ </string>
      </property>
     </widget>
-    <widget class="QSpinBox" name="sB_ordonneeOrigine_profil3">
+    <widget class="QSpinBox" name="sB_consigneFreinFin_profil3">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -500,16 +546,16 @@ de la courbe</string>
       </rect>
      </property>
      <property name="minimum">
-      <number>-10000</number>
+      <number>0</number>
      </property>
      <property name="maximum">
-      <number>10000</number>
+      <number>100</number>
      </property>
      <property name="singleStep">
-      <number>10</number>
+      <number>1</number>
      </property>
     </widget>
-    <widget class="QSpinBox" name="sB_coefficientDirecteur_profil3">
+    <widget class="QSpinBox" name="sB_consigneFreinDepart_profil3">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -519,13 +565,13 @@ de la courbe</string>
       </rect>
      </property>
      <property name="minimum">
-      <number>-10000</number>
+      <number>0</number>
      </property>
      <property name="maximum">
-      <number>10000</number>
+      <number>100</number>
      </property>
      <property name="singleStep">
-      <number>10</number>
+      <number>1</number>
      </property>
     </widget>
     <widget class="QLabel" name="l_image_profil3">
@@ -541,50 +587,57 @@ de la courbe</string>
       <string/>
      </property>
     </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>208</x>
+       <y>50</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>208</x>
+       <y>110</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="profil4">
     <attribute name="title">
      <string>Profil 4 </string>
     </attribute>
-    <widget class="QSpinBox" name="sB_coefficientDirecteur_profil4">
+    <widget class="QSpinBox" name="sB_consigneFreinFin_profil4">
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>140</y>
+       <y>100</y>
        <width>61</width>
        <height>31</height>
       </rect>
      </property>
      <property name="minimum">
-      <number>-10000</number>
+      <number>0</number>
      </property>
      <property name="maximum">
-      <number>10000</number>
+      <number>100</number>
      </property>
      <property name="singleStep">
-      <number>10</number>
+      <number>1</number>
      </property>
     </widget>
-    <widget class="QSpinBox" name="sB_dureeConstante_profil4">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>90</y>
-       <width>61</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="minimum">
-      <number>-10000</number>
-     </property>
-     <property name="maximum">
-      <number>10000</number>
-     </property>
-     <property name="singleStep">
-      <number>10</number>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="sB_coupleInitial_profil4">
+    <widget class="QSpinBox" name="sB_consigneFreinDepart_profil4">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -594,13 +647,13 @@ de la courbe</string>
       </rect>
      </property>
      <property name="minimum">
-      <number>-10000</number>
+      <number>0</number>
      </property>
      <property name="maximum">
-      <number>10000</number>
+      <number>100</number>
      </property>
      <property name="singleStep">
-      <number>10</number>
+      <number>1</number>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
@@ -613,34 +666,22 @@ de la courbe</string>
       </rect>
      </property>
      <property name="text">
-      <string>Couple Initial : </string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>89</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Durée constante : </string>
+      <string>Consigne du 
+frein de départ </string>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>140</y>
-       <width>141</width>
+       <x>60</x>
+       <y>100</y>
+       <width>91</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Coefficient directeur
- de la pente : </string>
+      <string>Consigne du 
+frein à atteindre</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pb_valider_profil4">
@@ -720,6 +761,55 @@ QPushButton:pressed {
       <string/>
      </property>
     </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>271</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">    QLabel {
+        background-color: #ffe6e6;   /* Rouge très pâle */
+        color: #b30000;              /* Rouge vif mais lisible */
+        border: 1px solid #ff9999;   /* Bordure rouge claire */
+        border-radius: 4px;
+        padding: 5px;
+    }</string>
+     </property>
+     <property name="text">
+      <string>⚠️ Attention : La consigne du frein à 
+atteindre doit être inférieur à celle de départ </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>100</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>40</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>%</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="profil5">
     <attribute name="title">
@@ -735,10 +825,11 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>Couple Etat Haut</string>
+      <string>Coefficient du 
+frein à Etat Haut</string>
      </property>
     </widget>
-    <widget class="QSpinBox" name="sB_coupleEtatHaut_profil5">
+    <widget class="QSpinBox" name="sB_coefficientFreinEtatHaut_profil5">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -767,10 +858,11 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>Couple Etat Bas</string>
+      <string>Coefficient du 
+frein à Etat Bas</string>
      </property>
     </widget>
-    <widget class="QSpinBox" name="sB_coupleEtatBas_profil5">
+    <widget class="QSpinBox" name="sB_coefficientFreinEtatBas_profil5">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -799,46 +891,14 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>Durée Etat Haut </string>
+      <string>Rapport Cyclique</string>
      </property>
     </widget>
-    <widget class="QSpinBox" name="sB_dureeEtatHaut_profil5">
+    <widget class="QSpinBox" name="sB_rapportCyclique_profil5">
      <property name="geometry">
       <rect>
        <x>150</x>
        <y>130</y>
-       <width>61</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="minimum">
-      <number>-10000</number>
-     </property>
-     <property name="maximum">
-      <number>10000</number>
-     </property>
-     <property name="singleStep">
-      <number>10</number>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_38">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>180</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Durée Etat Bas </string>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="sB_dureeEtatBas_profil5">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>180</y>
        <width>61</width>
        <height>31</height>
       </rect>
@@ -863,7 +923,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>Nm</string>
+      <string>%</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_40">
@@ -876,7 +936,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>Nm</string>
+      <string>%</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_41">
@@ -889,20 +949,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>secondes</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_42">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>180</y>
-       <width>51</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>secondes</string>
+      <string>%</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pb_retour_profil5">

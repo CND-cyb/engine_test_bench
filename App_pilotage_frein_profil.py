@@ -1,6 +1,7 @@
 import sys
-from PySide6.QtWidgets import QApplication, QWidget
-from PySide6.QtGui import QPixmap
+from PyQt6.QtCore import QTimer
+from PyQt6.QtWidgets import QApplication, QWidget
+from PyQt6.QtGui import QPixmap
 from pilotage_frein_profil_ui import Ui_Form
 import paho.mqtt.client as mqtt 
 
@@ -60,7 +61,7 @@ class AppPilotageProfil(QWidget):
             self.ui.tabWidget.setCurrentIndex(index)
             
     def validerProfil1(self):
-        profil1_coefA=self.ui.sB_coupleInitial.value()
+        profil1_coefA=self.ui.sB_consigneFrein.value()
         broker = "192.168.2.100"  
         port = 1883 
         topic1 = "Frein/Profil"
@@ -76,104 +77,145 @@ class AppPilotageProfil(QWidget):
         from CAccueil_prof import AppBancMotProf
         self.accueil = AppBancMotProf(self.identifiant,self.moteur_choisi)
         self.accueil.show()
+        self.accueil.demarrerCycle()
         self.close()
-    
+        
     def validerProfil2(self):
-        profil2_coefA=self.ui.sB_coefficientDirecteur_profil2.value()
-        profil2_coefB=self.ui.sB_ordonneeOrigine_profil2.value()
-        broker = "192.168.2.100"  
-        port = 1883 
-        topic1 = "Frein/Profil"
-        topic2 = "Frein/CoeffA"
-        topic3 = "Frein/CoeffB"
-        mqtt_username = "bancmoteur" 
-        mqtt_password = "CestGenialCeBts2025"  
-        client = mqtt.Client()
-        client.username_pw_set(mqtt_username, mqtt_password)
-        client.connect(broker,port,60)
-        client.publish(topic1, str(2))
-        client.publish(topic2,str(profil2_coefA))
-        client.publish(topic3,str(profil2_coefB))
-        client.disconnect()
         from CAccueil_prof import AppBancMotProf
         self.accueil = AppBancMotProf(self.identifiant,self.moteur_choisi)
         self.accueil.show()
+        self.accueil.demarrerCycle()        
         self.close()
+        def incrementationProfil2():
+            broker = "192.168.2.100"  
+            port = 1883 
+            mqtt_username = "bancmoteur" 
+            mqtt_password = "CestGenialCeBts2025" 
+            client = mqtt.Client()
+            client.username_pw_set(mqtt_username, mqtt_password)
+            client.connect(broker,port,60)
+            client.publish("Frein/Profil",str(2))
+            pourcentageFinal=self.ui.sB_consigneFreinFin_profil2.value()
+            b = self.ui.sB_consigneFreinDepart_profil2.value()           # Pourcentage de départ
+            a = (pourcentageFinal - b) / 10                               # Calcul automatique pour atteindre 100%
+            self.t = 0
+            def incrementerProfil2():
+                if self.t > 10:
+                    timer.stop()
+                    return
+                pourcentage = a * self.t + b
+                pourcentage = min(pourcentage, 100)  # Sécurité anti dépassement
+                client.publish("Frein/CoeffA", str(round(pourcentage, 2)))
+                self.t += 1
+            timer = QTimer()
+            timer.timeout.connect(incrementerProfil2)
+            timer.start(1000)
+        QTimer.singleShot(0, incrementationProfil2)
+
         
     def validerProfil3(self):
-        profil3_coefA=self.ui.sB_coefficientDirecteur_profil3.value()
-        profil3_coefB=self.ui.sB_ordonneeOrigine_profil3.value()
-        broker = "192.168.2.100"  
-        port = 1883 
-        topic1 = "Frein/Profil"
-        topic2 = "Frein/CoeffA"
-        topic3 = "Frein/CoeffB"
-        mqtt_username = "bancmoteur" 
-        mqtt_password = "CestGenialCeBts2025"  
-        client = mqtt.Client()
-        client.username_pw_set(mqtt_username, mqtt_password)
-        client.connect(broker,port,60)
-        client.publish(topic1, str(3))
-        client.publish(topic2,str(profil3_coefA))
-        client.publish(topic3,str(profil3_coefB))
-        client.disconnect()
         from CAccueil_prof import AppBancMotProf
         self.accueil = AppBancMotProf(self.identifiant,self.moteur_choisi)
         self.accueil.show()
+        self.accueil.demarrerCycle()
         self.close()
-        
+        def incrementationProfil3():
+            broker = "192.168.2.100"  
+            port = 1883 
+            mqtt_username = "bancmoteur" 
+            mqtt_password = "CestGenialCeBts2025" 
+            client = mqtt.Client()
+            client.username_pw_set(mqtt_username, mqtt_password)
+            client.connect(broker,port,60)
+            client.publish("Frein/Profil",str(3))
+            pourcentageFinal=self.ui.sB_consigneFreinFin_profil3.value()
+            b = self.ui.sB_consigneFreinDepart_profil3.value()           # Pourcentage de départ
+            a = (pourcentageFinal - b) / (10**2)                               # Calcul automatique pour atteindre 100%
+            self.t = 0
+            def incrementerProfil3():
+                if self.t > 10:
+                    timer.stop()
+                    return
+                pourcentage = a *(self.t**2)+b
+                pourcentage = min(pourcentage, 100)  # Sécurité anti dépassement
+                client.publish("Frein/CoeffA", str(round(pourcentage, 2)))
+                self.t += 1
+            timer = QTimer()
+            timer.timeout.connect(incrementerProfil3)
+            timer.start(1000)
+        QTimer.singleShot(0, incrementationProfil3)
+
     def validerProfil4(self):
-        profil4_coefA=self.ui.sB_coupleInitial_profil4.value()
-        profil4_coefB=self.ui.sB_dureeConstante_profil4.value()
-        profil4_coefC=self.ui.sB_coefficientDirecteur_profil4.value()
-        broker = "192.168.2.100"  
-        port = 1883 
-        topic1 = "Frein/Profil"
-        topic2 = "Frein/CoeffA"
-        topic3 = "Frein/CoeffB"
-        topic4 = "Frein/CoeffC"
-        mqtt_username = "bancmoteur" 
-        mqtt_password = "CestGenialCeBts2025"  
-        client = mqtt.Client()
-        client.username_pw_set(mqtt_username, mqtt_password)
-        client.connect(broker,port,60)
-        client.publish(topic1, str(4))
-        client.publish(topic2,str(profil4_coefA))
-        client.publish(topic3,str(profil4_coefB))
-        client.publish(topic4,str(profil4_coefC))
-        client.disconnect()
         from CAccueil_prof import AppBancMotProf
         self.accueil = AppBancMotProf(self.identifiant,self.moteur_choisi)
         self.accueil.show()
+        self.accueil.demarrerCycle()   
         self.close()
+        def incrementationProfil4():
+            broker = "192.168.2.100"
+            port = 1883
+            mqtt_username = "bancmoteur"
+            mqtt_password = "CestGenialCeBts2025"
+            client = mqtt.Client()
+            client.username_pw_set(mqtt_username, mqtt_password)
+            client.connect(broker, port, 60)
+            client.publish("Frein/Profil", str(4))
+            coef_depart = self.ui.sB_consigneFreinDepart_profil4.value()
+            coef_final = self.ui.sB_consigneFreinFin_profil4.value()
+            A = 10 * coef_final
+            self.t = 0
+            def incrementerProfil4():
+                if self.t > 10:
+                    timer.stop()
+                    return
+                if self.t == 0:
+                    pourcentage = coef_depart
+                else:
+                    pourcentage = A / self.t
+                    pourcentage = min(pourcentage, coef_depart)
+                client.publish("Frein/CoeffA", str(round(pourcentage, 2)))
+                self.t += 1
+            timer = QTimer()
+            timer.timeout.connect(incrementerProfil4)
+            timer.start(1000)
+        QTimer.singleShot(0, incrementationProfil4)
+
         
     def validerProfil5(self):
-        profil5_coefA=self.ui.sB_coupleEtatHaut_profil5.value()
-        profil5_coefB=self.ui.sB_coupleEtatBas_profil5.value()
-        profil5_coefC=self.ui.sB_dureeEtatHaut_profil5.value()
-        profil5_coefD=self.ui.sB_dureeEtatBas_profil5.value()
-        broker = "192.168.2.100"  
-        port = 1883 
-        topic1 = "Frein/Profil"
-        topic2 = "Frein/CoeffA"
-        topic3 = "Frein/CoeffB"
-        topic4 = "Frein/CoeffC"
-        topic5 = "Frein/CoeffD"
-        mqtt_username = "bancmoteur" 
-        mqtt_password = "CestGenialCeBts2025"  
-        client = mqtt.Client()
-        client.username_pw_set(mqtt_username, mqtt_password)
-        client.connect(broker,port,60)
-        client.publish(topic1, str(5))
-        client.publish(topic2,str(profil5_coefA))
-        client.publish(topic3,str(profil5_coefB))
-        client.publish(topic4,str(profil5_coefC))
-        client.publish(topic5,str(profil5_coefD))
-        client.disconnect()
         from CAccueil_prof import AppBancMotProf
         self.accueil = AppBancMotProf(self.identifiant,self.moteur_choisi)
         self.accueil.show()
+        self.accueil.demarrerCycle()   
         self.close()
+        def incrementationProfil5():
+            broker = "192.168.2.100"
+            port = 1883
+            mqtt_username = "bancmoteur"
+            mqtt_password = "CestGenialCeBts2025"
+            client = mqtt.Client()
+            client.username_pw_set(mqtt_username, mqtt_password)
+            client.connect(broker, port, 60)
+            client.publish("Frein/Profil", str(5))
+            coef_haut = self.ui.sB_coefficientFreinEtatHaut_profil5.value()
+            coef_bas = self.ui.sB_coefficientFreinEtatBas_profil5.value()
+            rapport = self.ui.sB_rapportCyclique_profil5.value()  # en %
+            tempsEtatHaut = round((rapport / 100) * 10)
+            tempsEtatBas = 10 - tempsEtatHaut
+            sequence = [coef_haut] * tempsEtatHaut + [coef_bas] * tempsEtatBas
+            sequence = sequence[:10]  # Sécurité
+            self.t = 0
+            def incrementerProfil5():
+                if self.t >= len(sequence):
+                    timer.stop()
+                    return
+                pourcentage = sequence[self.t]
+                client.publish("Frein/CoeffA", str(round(pourcentage, 2)))
+                self.t += 1
+            timer = QTimer()
+            timer.timeout.connect(incrementerProfil5)
+            timer.start(1000)
+        QTimer.singleShot(0, incrementationProfil5)
+
     
     def retourChoixProfil(self):
         for i in range(self.ui.tabWidget.count()):

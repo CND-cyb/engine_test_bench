@@ -24,7 +24,7 @@ class Ui_AppBancMot_prof(object):
     def setupUi(self, AppBancMot_prof):
         if not AppBancMot_prof.objectName():
             AppBancMot_prof.setObjectName(u"AppBancMot_prof")
-        AppBancMot_prof.resize(1366, 868)
+        AppBancMot_prof.resize(1347, 868)
         self.tab_administration = QTabWidget(AppBancMot_prof)
         self.tab_administration.setObjectName(u"tab_administration")
         self.tab_administration.setGeometry(QRect(0, 0, 1371, 841))
@@ -275,71 +275,32 @@ class Ui_AppBancMot_prof(object):
         self.l_choix_moteur = QLabel(self.tab_5)
         self.l_choix_moteur.setObjectName(u"l_choix_moteur")
         self.l_choix_moteur.setGeometry(QRect(40, 290, 271, 31))
+        self.pb_deconnecter_2 = QPushButton(self.tab_5)
+        self.pb_deconnecter_2.setObjectName(u"pb_deconnecter_2")
+        self.pb_deconnecter_2.setGeometry(QRect(570, 690, 121, 31))
+        self.pb_deconnecter_2.setStyleSheet(u"QPushButton {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    border-radius: 5px;\n"
+"    color: #2d3436;\n"
+"    padding: 6px 12px;\n"
+"    font: 13px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b2bec3;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #636e72;\n"
+"    color: #ffffff;\n"
+"}")
         self.tab_administration.addTab(self.tab_5, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
-        self.gBox_action_banc_moteur = QGroupBox(self.tab_3)
-        self.gBox_action_banc_moteur.setObjectName(u"gBox_action_banc_moteur")
-        self.gBox_action_banc_moteur.setGeometry(QRect(20, 110, 311, 571))
-        self.gBox_action_banc_moteur.setStyleSheet(u"QGroupBox {\n"
-"    background-color: #f5f5f5;\n"
-"    border: 1px solid #bdc3c7;\n"
-"    border-radius: 4px;\n"
-"    margin-top: 20px;\n"
-"    padding: 10px;\n"
-"}\n"
-"\n"
-"QGroupBox::title {\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center;\n"
-"    padding: 0 3px;\n"
-"    color: #2c3e50;\n"
-"    font: bold 12px;\n"
-"    background: transparent;\n"
-"}")
-        self.pb_visualiser_grandeurs = QPushButton(self.gBox_action_banc_moteur)
-        self.pb_visualiser_grandeurs.setObjectName(u"pb_visualiser_grandeurs")
-        self.pb_visualiser_grandeurs.setGeometry(QRect(55, 40, 201, 41))
-        self.pb_visualiser_grandeurs.setStyleSheet(u"QPushButton {\n"
-"    background-color: #dfe6e9;\n"
-"    border: 1px solid #b2bec3;\n"
-"    border-radius: 5px;\n"
-"    color: #2d3436;\n"
-"    padding: 6px 12px;\n"
-"    font: 13px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b2bec3;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #636e72;\n"
-"    color: #ffffff;\n"
-"}")
-        self.pb_generer_caracteristique = QPushButton(self.gBox_action_banc_moteur)
-        self.pb_generer_caracteristique.setObjectName(u"pb_generer_caracteristique")
-        self.pb_generer_caracteristique.setGeometry(QRect(55, 100, 201, 41))
-        self.pb_generer_caracteristique.setStyleSheet(u"QPushButton {\n"
-"    background-color: #dfe6e9;\n"
-"    border: 1px solid #b2bec3;\n"
-"    border-radius: 5px;\n"
-"    color: #2d3436;\n"
-"    padding: 6px 12px;\n"
-"    font: 13px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #b2bec3;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #636e72;\n"
-"    color: #ffffff;\n"
-"}")
         self.groupBox_3 = QGroupBox(self.tab_3)
         self.groupBox_3.setObjectName(u"groupBox_3")
-        self.groupBox_3.setGeometry(QRect(340, 110, 561, 571))
+        self.groupBox_3.setGeometry(QRect(440, 80, 881, 571))
         self.groupBox_3.setStyleSheet(u"QGroupBox {\n"
 "    background-color: #f5f5f5;\n"
 "    border: 1px solid #bdc3c7;\n"
@@ -361,32 +322,32 @@ class Ui_AppBancMot_prof(object):
         self.l_info.setGeometry(QRect(70, 30, 351, 21))
         self.l_tension = QLabel(self.groupBox_3)
         self.l_tension.setObjectName(u"l_tension")
-        self.l_tension.setGeometry(QRect(110, 65, 101, 21))
+        self.l_tension.setGeometry(QRect(290, 40, 101, 21))
         font = QFont()
         font.setPointSize(8)
         self.l_tension.setFont(font)
         self.l_couple = QLabel(self.groupBox_3)
         self.l_couple.setObjectName(u"l_couple")
-        self.l_couple.setGeometry(QRect(220, 110, 121, 21))
+        self.l_couple.setGeometry(QRect(400, 85, 121, 21))
         self.l_couple.setFont(font)
         self.l_courant = QLabel(self.groupBox_3)
         self.l_courant.setObjectName(u"l_courant")
-        self.l_courant.setGeometry(QRect(330, 65, 101, 21))
+        self.l_courant.setGeometry(QRect(510, 40, 101, 21))
         self.l_courant.setFont(font)
         self.l_vitesse = QLabel(self.groupBox_3)
         self.l_vitesse.setObjectName(u"l_vitesse")
-        self.l_vitesse.setGeometry(QRect(350, 110, 151, 21))
+        self.l_vitesse.setGeometry(QRect(530, 85, 151, 21))
         self.l_vitesse.setFont(font)
         self.l_puissance = QLabel(self.groupBox_3)
         self.l_puissance.setObjectName(u"l_puissance")
-        self.l_puissance.setGeometry(QRect(80, 110, 111, 21))
+        self.l_puissance.setGeometry(QRect(260, 85, 111, 21))
         self.l_puissance.setFont(font)
         self.w_graphique = QWidget(self.groupBox_3)
         self.w_graphique.setObjectName(u"w_graphique")
-        self.w_graphique.setGeometry(QRect(10, 200, 531, 351))
+        self.w_graphique.setGeometry(QRect(20, 170, 831, 391))
         self.l_axeY = QLabel(self.groupBox_3)
         self.l_axeY.setObjectName(u"l_axeY")
-        self.l_axeY.setGeometry(QRect(20, 160, 41, 31))
+        self.l_axeY.setGeometry(QRect(200, 135, 41, 31))
         self.cBoxAxeY = QComboBox(self.groupBox_3)
         self.cBoxAxeY.addItem("")
         self.cBoxAxeY.addItem("")
@@ -394,8 +355,9 @@ class Ui_AppBancMot_prof(object):
         self.cBoxAxeY.addItem("")
         self.cBoxAxeY.addItem("")
         self.cBoxAxeY.addItem("")
+        self.cBoxAxeY.addItem("")
         self.cBoxAxeY.setObjectName(u"cBoxAxeY")
-        self.cBoxAxeY.setGeometry(QRect(70, 160, 121, 31))
+        self.cBoxAxeY.setGeometry(QRect(250, 135, 121, 31))
         self.cBoxAxeY.setStyleSheet(u"QComboBox {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -429,7 +391,7 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.pb_valider_axe = QPushButton(self.groupBox_3)
         self.pb_valider_axe.setObjectName(u"pb_valider_axe")
-        self.pb_valider_axe.setGeometry(QRect(450, 160, 81, 31))
+        self.pb_valider_axe.setGeometry(QRect(630, 135, 81, 31))
         self.pb_valider_axe.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -454,8 +416,9 @@ class Ui_AppBancMot_prof(object):
         self.cBoxAxeX.addItem("")
         self.cBoxAxeX.addItem("")
         self.cBoxAxeX.addItem("")
+        self.cBoxAxeX.addItem("")
         self.cBoxAxeX.setObjectName(u"cBoxAxeX")
-        self.cBoxAxeX.setGeometry(QRect(300, 160, 121, 31))
+        self.cBoxAxeX.setGeometry(QRect(480, 135, 121, 31))
         self.cBoxAxeX.setStyleSheet(u"QComboBox {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -489,10 +452,10 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.l_axeX = QLabel(self.groupBox_3)
         self.l_axeX.setObjectName(u"l_axeX")
-        self.l_axeX.setGeometry(QRect(250, 160, 41, 31))
+        self.l_axeX.setGeometry(QRect(430, 135, 41, 31))
         self.pb_deconnecter = QPushButton(self.tab_3)
         self.pb_deconnecter.setObjectName(u"pb_deconnecter")
-        self.pb_deconnecter.setGeometry(QRect(570, 690, 121, 31))
+        self.pb_deconnecter.setGeometry(QRect(575, 690, 121, 31))
         self.pb_deconnecter.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
@@ -512,7 +475,7 @@ class Ui_AppBancMot_prof(object):
 "}")
         self.gBox_liste_essai = QGroupBox(self.tab_3)
         self.gBox_liste_essai.setObjectName(u"gBox_liste_essai")
-        self.gBox_liste_essai.setGeometry(QRect(910, 110, 401, 571))
+        self.gBox_liste_essai.setGeometry(QRect(10, 80, 401, 571))
         self.gBox_liste_essai.setStyleSheet(u"QGroupBox {\n"
 "    background-color: #f5f5f5;\n"
 "    border: 1px solid #bdc3c7;\n"
@@ -683,10 +646,13 @@ class Ui_AppBancMot_prof(object):
         self.l_choix_essai = QLabel(self.gBox_liste_essai)
         self.l_choix_essai.setObjectName(u"l_choix_essai")
         self.l_choix_essai.setGeometry(QRect(20, 340, 361, 21))
-        self.pb_choisir_moteur = QPushButton(self.tab_3)
-        self.pb_choisir_moteur.setObjectName(u"pb_choisir_moteur")
-        self.pb_choisir_moteur.setGeometry(QRect(350, 30, 141, 41))
-        self.pb_choisir_moteur.setStyleSheet(u"QPushButton {\n"
+        self.l_moteur = QLabel(self.tab_3)
+        self.l_moteur.setObjectName(u"l_moteur")
+        self.l_moteur.setGeometry(QRect(470, 80, 351, 16))
+        self.pb_generer_caracteristique = QPushButton(self.tab_3)
+        self.pb_generer_caracteristique.setObjectName(u"pb_generer_caracteristique")
+        self.pb_generer_caracteristique.setGeometry(QRect(575, 30, 201, 41))
+        self.pb_generer_caracteristique.setStyleSheet(u"QPushButton {\n"
 "    background-color: #dfe6e9;\n"
 "    border: 1px solid #b2bec3;\n"
 "    border-radius: 5px;\n"
@@ -703,9 +669,6 @@ class Ui_AppBancMot_prof(object):
 "    background-color: #636e72;\n"
 "    color: #ffffff;\n"
 "}")
-        self.l_moteur = QLabel(self.tab_3)
-        self.l_moteur.setObjectName(u"l_moteur")
-        self.l_moteur.setGeometry(QRect(470, 80, 351, 16))
         self.tab_administration.addTab(self.tab_3, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
@@ -797,9 +760,49 @@ class Ui_AppBancMot_prof(object):
         self.label_2 = QLabel(self.tab_4)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(520, 90, 121, 21))
+        self.pb_deconnecter_5 = QPushButton(self.tab_4)
+        self.pb_deconnecter_5.setObjectName(u"pb_deconnecter_5")
+        self.pb_deconnecter_5.setGeometry(QRect(570, 690, 121, 31))
+        self.pb_deconnecter_5.setStyleSheet(u"QPushButton {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    border-radius: 5px;\n"
+"    color: #2d3436;\n"
+"    padding: 6px 12px;\n"
+"    font: 13px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b2bec3;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #636e72;\n"
+"    color: #ffffff;\n"
+"}")
         self.tab_administration.addTab(self.tab_4, "")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
+        self.pb_deconnecter_6 = QPushButton(self.tab)
+        self.pb_deconnecter_6.setObjectName(u"pb_deconnecter_6")
+        self.pb_deconnecter_6.setGeometry(QRect(570, 690, 121, 31))
+        self.pb_deconnecter_6.setStyleSheet(u"QPushButton {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    border-radius: 5px;\n"
+"    color: #2d3436;\n"
+"    padding: 6px 12px;\n"
+"    font: 13px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b2bec3;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #636e72;\n"
+"    color: #ffffff;\n"
+"}")
         self.tab_administration.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -852,6 +855,26 @@ class Ui_AppBancMot_prof(object):
         self.qr_label = QLabel(self.tab_2)
         self.qr_label.setObjectName(u"qr_label")
         self.qr_label.setGeometry(QRect(518, 135, 261, 231))
+        self.pb_deconnecter_7 = QPushButton(self.tab_2)
+        self.pb_deconnecter_7.setObjectName(u"pb_deconnecter_7")
+        self.pb_deconnecter_7.setGeometry(QRect(570, 690, 121, 31))
+        self.pb_deconnecter_7.setStyleSheet(u"QPushButton {\n"
+"    background-color: #dfe6e9;\n"
+"    border: 1px solid #b2bec3;\n"
+"    border-radius: 5px;\n"
+"    color: #2d3436;\n"
+"    padding: 6px 12px;\n"
+"    font: 13px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #b2bec3;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #636e72;\n"
+"    color: #ffffff;\n"
+"}")
         self.tab_administration.addTab(self.tab_2, "")
 
         self.retranslateUi(AppBancMot_prof)
@@ -898,10 +921,8 @@ class Ui_AppBancMot_prof(object):
         self.pb_piloter_frein_profil.setText(QCoreApplication.translate("AppBancMot_prof", u"Piloter Frein Profils", None))
         self.pb_arreter_cycle.setText(QCoreApplication.translate("AppBancMot_prof", u"Arr\u00eater le cycle", None))
         self.l_choix_moteur.setText("")
+        self.pb_deconnecter_2.setText(QCoreApplication.translate("AppBancMot_prof", u"D\u00e9connexion", None))
         self.tab_administration.setTabText(self.tab_administration.indexOf(self.tab_5), QCoreApplication.translate("AppBancMot_prof", u"Lancement des essais", None))
-        self.gBox_action_banc_moteur.setTitle(QCoreApplication.translate("AppBancMot_prof", u"Actions Banc Moteur", None))
-        self.pb_visualiser_grandeurs.setText(QCoreApplication.translate("AppBancMot_prof", u"Visualiser Grandeurs", None))
-        self.pb_generer_caracteristique.setText(QCoreApplication.translate("AppBancMot_prof", u"G\u00e9n\u00e9rer Caract\u00e9ristiques", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("AppBancMot_prof", u"Informations", None))
         self.l_info.setText("")
         self.l_tension.setText(QCoreApplication.translate("AppBancMot_prof", u"Tension : ", None))
@@ -916,6 +937,7 @@ class Ui_AppBancMot_prof(object):
         self.cBoxAxeY.setItemText(3, QCoreApplication.translate("AppBancMot_prof", u"puissance", None))
         self.cBoxAxeY.setItemText(4, QCoreApplication.translate("AppBancMot_prof", u"couple", None))
         self.cBoxAxeY.setItemText(5, QCoreApplication.translate("AppBancMot_prof", u"vitesse", None))
+        self.cBoxAxeY.setItemText(6, QCoreApplication.translate("AppBancMot_prof", u"temps", None))
 
         self.pb_valider_axe.setText(QCoreApplication.translate("AppBancMot_prof", u"Valider", None))
         self.cBoxAxeX.setItemText(0, "")
@@ -924,6 +946,7 @@ class Ui_AppBancMot_prof(object):
         self.cBoxAxeX.setItemText(3, QCoreApplication.translate("AppBancMot_prof", u"puissance", None))
         self.cBoxAxeX.setItemText(4, QCoreApplication.translate("AppBancMot_prof", u"couple", None))
         self.cBoxAxeX.setItemText(5, QCoreApplication.translate("AppBancMot_prof", u"vitesse", None))
+        self.cBoxAxeX.setItemText(6, QCoreApplication.translate("AppBancMot_prof", u"temps", None))
 
         self.l_axeX.setText(QCoreApplication.translate("AppBancMot_prof", u"Axe Y", None))
         self.pb_deconnecter.setText(QCoreApplication.translate("AppBancMot_prof", u"D\u00e9connexion", None))
@@ -949,8 +972,8 @@ class Ui_AppBancMot_prof(object):
         self.cB_listeTries.setItemText(3, QCoreApplication.translate("AppBancMot_prof", u"par moteur", None))
 
         self.l_choix_essai.setText("")
-        self.pb_choisir_moteur.setText(QCoreApplication.translate("AppBancMot_prof", u"Choisir un moteur ", None))
         self.l_moteur.setText("")
+        self.pb_generer_caracteristique.setText(QCoreApplication.translate("AppBancMot_prof", u"G\u00e9n\u00e9rer Caract\u00e9ristiques", None))
         self.tab_administration.setTabText(self.tab_administration.indexOf(self.tab_3), QCoreApplication.translate("AppBancMot_prof", u"Analyse des essais", None))
         self.groupBox.setTitle(QCoreApplication.translate("AppBancMot_prof", u"Ajout manuel d'un \u00e9l\u00e8ve", None))
         self.label_3.setText(QCoreApplication.translate("AppBancMot_prof", u"Nom", None))
@@ -972,13 +995,16 @@ class Ui_AppBancMot_prof(object):
         ___qtablewidgetitem21 = self.tE_listeUtilisateur.horizontalHeaderItem(4)
         ___qtablewidgetitem21.setText(QCoreApplication.translate("AppBancMot_prof", u"prenom", None));
         self.label_2.setText(QCoreApplication.translate("AppBancMot_prof", u"Liste des utilisateurs", None))
+        self.pb_deconnecter_5.setText(QCoreApplication.translate("AppBancMot_prof", u"D\u00e9connexion", None))
         self.tab_administration.setTabText(self.tab_administration.indexOf(self.tab_4), QCoreApplication.translate("AppBancMot_prof", u"Administration", None))
+        self.pb_deconnecter_6.setText(QCoreApplication.translate("AppBancMot_prof", u"D\u00e9connexion", None))
         self.tab_administration.setTabText(self.tab_administration.indexOf(self.tab), QCoreApplication.translate("AppBancMot_prof", u"Aide", None))
         self.pb_valider_2AF.setText(QCoreApplication.translate("AppBancMot_prof", u"Valider", None))
-        self.l_reponse.setText(QCoreApplication.translate("AppBancMot_prof", u"Reponse", None))
+        self.l_reponse.setText("")
         self.label.setText(QCoreApplication.translate("AppBancMot_prof", u"Activation ou R\u00e9activation \n"
 "de la double authentification ", None))
         self.qr_label.setText(QCoreApplication.translate("AppBancMot_prof", u"QRCODE", None))
+        self.pb_deconnecter_7.setText(QCoreApplication.translate("AppBancMot_prof", u"D\u00e9connexion", None))
         self.tab_administration.setTabText(self.tab_administration.indexOf(self.tab_2), QCoreApplication.translate("AppBancMot_prof", u"Param\u00e8tres", None))
     # retranslateUi
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>440</width>
+    <width>820</width>
     <height>512</height>
    </rect>
   </property>
@@ -35,10 +35,10 @@ QPushButton:pressed {
   <widget class="QPushButton" name="pb_valider_consigne_frein">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>260</y>
-     <width>81</width>
-     <height>31</height>
+     <x>120</x>
+     <y>230</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -67,7 +67,7 @@ QPushButton:pressed {
   <widget class="QSpinBox" name="sB_valeurFrein">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>150</x>
      <y>190</y>
      <width>42</width>
      <height>22</height>
@@ -80,7 +80,7 @@ QPushButton:pressed {
   <widget class="QSlider" name="slider_valeurFrein">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>80</x>
      <y>160</y>
      <width>160</width>
      <height>22</height>
@@ -127,11 +127,21 @@ QSlider::add-page:horizontal {
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>90</x>
      <y>60</y>
      <width>151</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: #cce6ff;     /* Bleu très pâle */
+    color: #003366;                /* Bleu foncé pour un bon contraste */
+    border: 1px solid #66b3ff;     /* Bordure bleu clair */
+    border-radius: 4px;
+    padding: 5px;
+}
+</string>
    </property>
    <property name="text">
     <string>Choisir la consigne de frein </string>
@@ -140,14 +150,111 @@ QSlider::add-page:horizontal {
   <widget class="QPushButton" name="pb_retour_pilotage_frein">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>340</y>
-     <width>81</width>
-     <height>31</height>
+     <x>120</x>
+     <y>390</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>Retour</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="tE_valeur_temps_reel">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>100</y>
+     <width>291</width>
+     <height>291</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>60</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: #e6f2ff;    /* Bleu très clair, style info */
+    color: #0d47a1;               /* Bleu foncé, lisible et sérieux */
+    border: 1px solid #90caf9;    /* Bordure douce et informative */
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 14px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Valeurs en temps réel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_marche_frein">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>310</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+   </property>
+   <property name="text">
+    <string>Marche</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pb_arret_frein">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>310</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+   </property>
+   <property name="text">
+    <string>Arrêt</string>
    </property>
   </widget>
  </widget>

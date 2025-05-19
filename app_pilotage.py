@@ -15,11 +15,14 @@ class AppPilotage(QWidget):
         self.ui.pb_marche_frein.clicked.connect(self.debutTest)
         self.ui.pb_arret_frein.clicked.connect(self.arretTest)
         self.ui.pb_valider_consigne_frein.clicked.connect(self.validerConsigne)
-        self.ui.pb_retour_pilotage_frein(self.retour)
+        self.ui.pb_retour_pilotage_frein.clicked.connect(self.retourAccueil)
         self.show()
         
-    def retour(self):
-          pass
+    def retourAccueil(self):
+        from CAccueil_prof import AppBancMotProf
+        self.accueil = AppBancMotProf(self.identifiant)
+        self.accueil.show()
+        self.close()
     
     def debutTest(self):
         consigneFrein=self.ui.sB_valeurFrein.value()
@@ -42,7 +45,7 @@ class AppPilotage(QWidget):
     def arretTest(self):
         broker = "192.168.2.100"  
         port = 1883 
-        topic1 = "Frein/etat"
+        topic1 = "Frein/Etat"
         mqtt_username = "bancmoteur" 
         mqtt_password = "CestGenialCeBts2025"  
         client = mqtt.Client()
@@ -55,9 +58,9 @@ class AppPilotage(QWidget):
         valeur=int(self.ui.sB_valeurFrein.value())
         broker = "192.168.2.100"  
         port = 1883 
-        topic1 = "Frein/etat"
-        topic2 = "Frein/profil"
-        topic3 = "Frein/coeffA"
+        topic1 = "Frein/Etat"
+        topic2 = "Frein/Profil"
+        topic3 = "Frein/CoeffA"
         mqtt_username = "bancmoteur" 
         mqtt_password = "CestGenialCeBts2025"  
         client = mqtt.Client()

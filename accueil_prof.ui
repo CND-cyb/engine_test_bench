@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
+    <width>1347</width>
     <height>868</height>
    </rect>
   </property>
@@ -461,112 +461,49 @@ QPushButton:pressed {
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="pb_deconnecter_2">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>690</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+     </property>
+     <property name="text">
+      <string>Déconnexion</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
      <string>Analyse des essais</string>
     </attribute>
-    <widget class="QGroupBox" name="gBox_action_banc_moteur">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>110</y>
-       <width>311</width>
-       <height>571</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QGroupBox {
-    background-color: #f5f5f5;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-    margin-top: 20px;
-    padding: 10px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    subcontrol-position: top center;
-    padding: 0 3px;
-    color: #2c3e50;
-    font: bold 12px;
-    background: transparent;
-}</string>
-     </property>
-     <property name="title">
-      <string>Actions Banc Moteur</string>
-     </property>
-     <widget class="QPushButton" name="pb_visualiser_grandeurs">
-      <property name="geometry">
-       <rect>
-        <x>55</x>
-        <y>40</y>
-        <width>201</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-    background-color: #dfe6e9;
-    border: 1px solid #b2bec3;
-    border-radius: 5px;
-    color: #2d3436;
-    padding: 6px 12px;
-    font: 13px;
-}
-
-QPushButton:hover {
-    background-color: #b2bec3;
-}
-
-QPushButton:pressed {
-    background-color: #636e72;
-    color: #ffffff;
-}</string>
-      </property>
-      <property name="text">
-       <string>Visualiser Grandeurs</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pb_generer_caracteristique">
-      <property name="geometry">
-       <rect>
-        <x>55</x>
-        <y>100</y>
-        <width>201</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-    background-color: #dfe6e9;
-    border: 1px solid #b2bec3;
-    border-radius: 5px;
-    color: #2d3436;
-    padding: 6px 12px;
-    font: 13px;
-}
-
-QPushButton:hover {
-    background-color: #b2bec3;
-}
-
-QPushButton:pressed {
-    background-color: #636e72;
-    color: #ffffff;
-}</string>
-      </property>
-      <property name="text">
-       <string>Générer Caractéristiques</string>
-      </property>
-     </widget>
-    </widget>
     <widget class="QGroupBox" name="groupBox_3">
      <property name="geometry">
       <rect>
-       <x>340</x>
-       <y>110</y>
-       <width>561</width>
+       <x>440</x>
+       <y>80</y>
+       <width>881</width>
        <height>571</height>
       </rect>
      </property>
@@ -607,8 +544,8 @@ QGroupBox::title {
      <widget class="QLabel" name="l_tension">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>65</y>
+        <x>290</x>
+        <y>40</y>
         <width>101</width>
         <height>21</height>
        </rect>
@@ -625,8 +562,8 @@ QGroupBox::title {
      <widget class="QLabel" name="l_couple">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>110</y>
+        <x>400</x>
+        <y>85</y>
         <width>121</width>
         <height>21</height>
        </rect>
@@ -643,8 +580,8 @@ QGroupBox::title {
      <widget class="QLabel" name="l_courant">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>65</y>
+        <x>510</x>
+        <y>40</y>
         <width>101</width>
         <height>21</height>
        </rect>
@@ -661,8 +598,8 @@ QGroupBox::title {
      <widget class="QLabel" name="l_vitesse">
       <property name="geometry">
        <rect>
-        <x>350</x>
-        <y>110</y>
+        <x>530</x>
+        <y>85</y>
         <width>151</width>
         <height>21</height>
        </rect>
@@ -679,8 +616,8 @@ QGroupBox::title {
      <widget class="QLabel" name="l_puissance">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>110</y>
+        <x>260</x>
+        <y>85</y>
         <width>111</width>
         <height>21</height>
        </rect>
@@ -697,18 +634,18 @@ QGroupBox::title {
      <widget class="QWidget" name="w_graphique" native="true">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>200</y>
-        <width>531</width>
-        <height>351</height>
+        <x>20</x>
+        <y>170</y>
+        <width>831</width>
+        <height>391</height>
        </rect>
       </property>
      </widget>
      <widget class="QLabel" name="l_axeY">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>160</y>
+        <x>200</x>
+        <y>135</y>
         <width>41</width>
         <height>31</height>
        </rect>
@@ -720,8 +657,8 @@ QGroupBox::title {
      <widget class="QComboBox" name="cBoxAxeY">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>160</y>
+        <x>250</x>
+        <y>135</y>
         <width>121</width>
         <height>31</height>
        </rect>
@@ -789,12 +726,17 @@ QComboBox QAbstractItemView {
         <string>vitesse</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>temps</string>
+       </property>
+      </item>
      </widget>
      <widget class="QPushButton" name="pb_valider_axe">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>160</y>
+        <x>630</x>
+        <y>135</y>
         <width>81</width>
         <height>31</height>
        </rect>
@@ -825,8 +767,8 @@ QPushButton:pressed {
      <widget class="QComboBox" name="cBoxAxeX">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>160</y>
+        <x>480</x>
+        <y>135</y>
         <width>121</width>
         <height>31</height>
        </rect>
@@ -894,12 +836,17 @@ QComboBox QAbstractItemView {
         <string>vitesse</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>temps</string>
+       </property>
+      </item>
      </widget>
      <widget class="QLabel" name="l_axeX">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>160</y>
+        <x>430</x>
+        <y>135</y>
         <width>41</width>
         <height>31</height>
        </rect>
@@ -912,7 +859,7 @@ QComboBox QAbstractItemView {
     <widget class="QPushButton" name="pb_deconnecter">
      <property name="geometry">
       <rect>
-       <x>570</x>
+       <x>575</x>
        <y>690</y>
        <width>121</width>
        <height>31</height>
@@ -944,8 +891,8 @@ QPushButton:pressed {
     <widget class="QGroupBox" name="gBox_liste_essai">
      <property name="geometry">
       <rect>
-       <x>910</x>
-       <y>110</y>
+       <x>10</x>
+       <y>80</y>
        <width>401</width>
        <height>571</height>
       </rect>
@@ -1233,12 +1180,25 @@ QComboBox QAbstractItemView {
       </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pb_choisir_moteur">
+    <widget class="QLabel" name="l_moteur">
      <property name="geometry">
       <rect>
-       <x>350</x>
+       <x>470</x>
+       <y>80</y>
+       <width>351</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_generer_caracteristique">
+     <property name="geometry">
+      <rect>
+       <x>575</x>
        <y>30</y>
-       <width>141</width>
+       <width>201</width>
        <height>41</height>
       </rect>
      </property>
@@ -1262,20 +1222,7 @@ QPushButton:pressed {
 }</string>
      </property>
      <property name="text">
-      <string>Choisir un moteur </string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="l_moteur">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>80</y>
-       <width>351</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
+      <string>Générer Caractéristiques</string>
      </property>
     </widget>
    </widget>
@@ -1516,11 +1463,75 @@ QPushButton:pressed {
       <string>Liste des utilisateurs</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pb_deconnecter_5">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>690</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+     </property>
+     <property name="text">
+      <string>Déconnexion</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab">
     <attribute name="title">
      <string>Aide</string>
     </attribute>
+    <widget class="QPushButton" name="pb_deconnecter_6">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>690</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+     </property>
+     <property name="text">
+      <string>Déconnexion</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -1538,6 +1549,7 @@ QPushButton:pressed {
      <property name="font">
       <font>
        <pointsize>-1</pointsize>
+       <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -1599,7 +1611,7 @@ QPushButton:pressed {
       </rect>
      </property>
      <property name="text">
-      <string>Reponse</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label">
@@ -1630,6 +1642,38 @@ de la double authentification </string>
      </property>
      <property name="text">
       <string>QRCODE</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_deconnecter_7">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>690</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+     </property>
+     <property name="text">
+      <string>Déconnexion</string>
      </property>
     </widget>
    </widget>
