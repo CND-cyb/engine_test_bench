@@ -1,6 +1,6 @@
 /*
 # Titre : MQTT Acquisition, Publication des mesures et Contrôle Frein
-# Auteur : TURKEL Ahmet Fatih
+# Auteur : Ahmet
 # Version : 28/04/2025
 */
 
