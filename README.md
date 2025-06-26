@@ -55,7 +55,7 @@ Key features include:
 
 ### 📱 Touchscreen UI (Nextion + ESP32)
 <p align="center">
-  <img src="images/touch_screen_ui.png" alt="Touch UI" width="600"/>
+  <img src="images/touch_screen_ui.png" alt="Touch UI" width="500"/>
   <img src="images/touch_screen.png" alt="Touch UI" width="400"/>
 </p>
 
