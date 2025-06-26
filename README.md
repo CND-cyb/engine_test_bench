@@ -45,22 +45,6 @@ Key features include:
 ✅ **Data export + historic analysis**  
 ✅ **Motor characteristic curve** generation  
 ✅ Intuitive **GUI for students & teachers**
----
-
-## 🗂️ Repository Structure
-
-**📁 motor-bench-acquisition**
-├── arduino/ # Arduino firmware (data acquisition)
-│ └── main.ino
-├── esp32/ # ESP32 + Nextion code
-│ └── main.ino
-├── pc_app/ # Python PC GUI
-│ ├── ...
-├── images/ # Images / Screenshots
-│ └── pc_app_ui.png
-│ └── engine_bench.png
-│ └── touch_screen_ui.png
-└── README.md
 
 ---
 
