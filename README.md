@@ -55,8 +55,8 @@ Key features include:
 
 ### 📱 Touchscreen UI (Nextion + ESP32)
 <p align="center">
-  <img src="images/touch_screen_ui.png" alt="Touch UI" width="450"/>
-  <img src="images/touch_screen.png" alt="Touch UI" width="400"/>
+  <img src="images/touch_screen_ui.png" alt="Touch UI" width="400"/>
+  <img src="images/touch_screen.png" alt="Touch UI" width="350"/>
 </p>
 
 ### 🔨 Engine Test Bench (Nextion + ESP32)
