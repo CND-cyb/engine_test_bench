@@ -38,13 +38,29 @@ Key features include:
 
 ## 🔍 Features
 
-✅ Real-time acquisition every **0.5s**  
-✅ Dual interface: **PC app** and **Nextion touchscreen**  
-✅ **Manual / Profile** brake control (via PWM)  
-✅ Secure **login system** with **2FA (TOTP)**  
-✅ **Data export + historic analysis**  
-✅ **Motor characteristic curve** generation  
-✅ Intuitive **GUI for students & teachers**
+✅ - Real-time acquisition every **0.5s**  
+✅ - Dual interface: **PC app** and **Nextion touchscreen**  
+✅ - **Manual / Profile** brake control (via PWM)  
+✅ - Secure **login system** with **2FA (TOTP)**  
+✅ - **Data export + historic analysis**  
+✅ - **Motor characteristic curve** generation  
+✅ - Intuitive **GUI for students & teachers**
+---
+
+## 🗂️ Repository Structure
+
+📁 motor-bench-acquisition
+├── arduino/ # Arduino firmware (data acquisition)
+│ └── main.ino
+├── esp32/ # ESP32 + Nextion code
+│ └── main.ino
+├── pc_app/ # Python PC GUI
+│ ├── ...
+├── images/ # Images / Screenshots
+│ └── pc_app_ui.png
+│ └── engine_bench.png
+│ └── touch_screen_ui.png
+└── README.md
 
 ---
 
@@ -58,3 +74,9 @@ Key features include:
 
 ### 🔨 Engine Test Bench (Nextion + ESP32)
 <img src="images/engine_bench.png" alt="Engine Motor"/>
+
+---
+
+## 🙌 Acknowledgements
+
+Thanks to our professors and technical mentors at Lycée Pierre Mendès France for their guidance throughout this project.
