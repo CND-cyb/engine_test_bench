@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Connexion</class>
+ <widget class="QWidget" name="Connexion">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>626</width>
+    <height>258</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Authentification - Banc d'essais moteur</string>
+  </property>
+  <widget class="QPushButton" name="pb_connecter">
+   <property name="geometry">
+    <rect>
+     <x>234</x>
+     <y>181</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+   </property>
+   <property name="text">
+    <string>Se connecter</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="le_identifiant">
+   <property name="geometry">
+    <rect>
+     <x>264</x>
+     <y>32</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 5px;
+    color: #2c3e50;
+    font: 12px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498db;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="le_mdp">
+   <property name="geometry">
+    <rect>
+     <x>264</x>
+     <y>82</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 5px;
+    color: #2c3e50;
+    font: 12px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498db;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>164</x>
+     <y>80</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mot de passe</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>164</x>
+     <y>30</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Identifiant</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="l_erreur">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>120</y>
+     <width>251</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pb_connecter</sender>
+   <signal>clicked()</signal>
+   <receiver>Connexion</receiver>
+   <slot>authentifier()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>73</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>authentifier()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>544</width>
+    <height>472</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>90</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Choix du profil de couple </string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>130</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    padding: 6px 30px 6px 6px;
+    font: 13px;
+    color: #2d3436;
+}
+
+QComboBox:hover {
+    background-color: #b2bec3;
+}
+
+QComboBox:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid #b2bec3;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    selection-background-color: #636e72;
+    selection-color: #ffffff;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Couple constant : T = B</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Couple de type : T = An+B</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Couple de type : T = An²
++B </string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Couple de type : T=An-1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Couple de commande impulsionnelle</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>180</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Consigne de A :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>220</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Consigne de B :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>180</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>220</y>
+     <width>151</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>270</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+   </property>
+   <property name="text">
+    <string>Valider</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>330</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #dfe6e9;
+    border: 1px solid #b2bec3;
+    border-radius: 5px;
+    color: #2d3436;
+    padding: 6px 12px;
+    font: 13px;
+}
+
+QPushButton:hover {
+    background-color: #b2bec3;
+}
+
+QPushButton:pressed {
+    background-color: #636e72;
+    color: #ffffff;
+}</string>
+   </property>
+   <property name="text">
+    <string>Retour</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
