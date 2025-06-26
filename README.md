@@ -38,7 +38,7 @@ Key features include:
 
 ## 🔍 Features
 
-✅ Real-time acquisition every **0.5s**  
+✅ - Real-time acquisition every **0.5s**  
 ✅ Dual interface: **PC app** and **Nextion touchscreen**  
 ✅ **Manual / Profile** brake control (via PWM)  
 ✅ Secure **login system** with **2FA (TOTP)**  
